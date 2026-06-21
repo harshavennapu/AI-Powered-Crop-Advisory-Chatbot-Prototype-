@@ -5,6 +5,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/dashboard", label: "Dashboard" },
+  { href: "/showcase", label: "Showcase" },
 ];
 
 export default function Navbar() {
