@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -12,11 +15,11 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/90 shadow-sm backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        
         <Link
           href="/"
           className="flex items-center gap-3 transition-opacity hover:opacity-90"
         >
-          {/* Crop-style logo */}
           <div className="h-10 w-12 overflow-hidden rounded-md border-2 border-green-600 shadow-sm sm:h-11 sm:w-14">
             <Image
               src="/logo1.png"
@@ -27,7 +30,9 @@ export default function Navbar() {
             />
           </div>
 
-          <span className="text-xl font-bold text-green-700">AgroAI</span>
+          <span className="text-xl font-bold text-green-700">
+            AgroAI
+          </span>
         </Link>
 
         <ul className="flex items-center gap-4 sm:gap-6">
@@ -41,7 +46,13 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          {/* Customized Login Button with Borders */}
+
+          {/* Dark/Light Toggle */}
+          <li>
+            <ThemeToggle />
+          </li>
+
+          {/* Login Button */}
           <li>
             <Link
               href="/login"

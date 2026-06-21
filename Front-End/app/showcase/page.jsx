@@ -29,15 +29,22 @@ export default function ShowcasePage() {
 
       <Toast message="Success Toast" />
 
-      <Modal isOpen={open}>
-        <h2 className="text-xl font-bold mb-4">
+       <Modal isOpen={open}>
+        <h2 className="mb-4 text-2xl font-bold text-gray-800">
           Modal Component
         </h2>
 
-        <Button onClick={() => setOpen(false)}>
+        <p className="mb-6 text-gray-600">
+          This is a reusable modal component demonstration.
+        </p>
+
+        <button
+           onClick={() => setOpen(false)}
+           className="rounded-md bg-red-500 px-4 py-2 font-medium text-white hover:bg-red-600"
+  >
           Close
-        </Button>
-      </Modal>
+        </button>
+       </Modal>
     </div>
   );
 }

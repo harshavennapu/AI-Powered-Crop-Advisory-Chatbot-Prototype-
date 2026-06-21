@@ -30,23 +30,41 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
+
       <main className="flex-1">
         <Hero />
+
         <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="mb-8 text-center text-2xl font-bold text-gray-900 sm:text-3xl">
-            Our Features
+          <h2 className="mb-10 text-center text-4xl font-extrabold text-yellow-300 drop-shadow-lg md:text-5xl">
+            🌱 Our Features
           </h2>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {cards.map((card) => (
-              <Card
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {cards.map((card, index) => (
+              <div
                 key={card.title}
-                title={card.title}
-                description={card.description}
-              />
+                className={`rounded-2xl p-1 shadow-xl ${
+                  index === 0
+                    ? "bg-linear-to-r from-green-500 to-emerald-600"
+                    : index === 1
+                    ? "bg-linear-to-r from-blue-500 to-cyan-600"
+                    : index === 2
+                    ? "bg-linear-to-r from-orange-500 to-red-500"
+                    : "bg-linear-to-r from-purple-500 to-indigo-600"
+                }`}
+              >
+                <div className="rounded-2xl bg-white p-6 h-full">
+                  <Card
+                    title={card.title}
+                    description={card.description}
+                  />
+                </div>
+              </div>
             ))}
           </div>
         </section>
       </main>
+
       <Footer />
     </div>
   );

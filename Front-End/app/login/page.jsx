@@ -6,8 +6,10 @@ export default function LoginPage() {
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-12 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">Login</h1>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-gray-700 sm:text-lg">
+        <h1 className="text-4xl font-bold text-yellow-300 drop-shadow-lg">
+  Login
+</h1>
+        <p className="text-green-100 drop-shadow-md">
           This page contains login functionality placeholder.
         </p>
       </main>

@@ -16,12 +16,12 @@ export default function Hero() {
           />
         </div>
 
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-yellow-300 drop-shadow-lg">
           Smart Farming Solutions
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-base text-gray-700 sm:text-lg md:text-xl">
-          Get AI-powered crop advice, weather insights, and market data to grow
-          smarter and harvest better.
+
+        <p className="mt-4 text-lg md:text-xl font-medium text-emerald-100 drop-shadow-md">
+          Get AI-powered crop advice, weather insights, and market data to grow smarter and harvest better.
         </p>
         <Link
           href="/dashboard"

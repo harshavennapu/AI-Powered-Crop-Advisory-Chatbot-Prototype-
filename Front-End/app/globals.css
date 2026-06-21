@@ -12,4 +12,15 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode */
+html.dark body {
+  background: #111827;
+  color: white;
+}
+
+html.dark {
+  color-scheme: dark;
 }
