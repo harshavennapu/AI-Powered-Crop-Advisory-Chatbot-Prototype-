@@ -1,115 +1,111 @@
-# AgriAssist AI – Crop Advisory Chatbot
+# 🌱 AgriAssist AI – Crop Advisory Chatbot
 
 ## Overview
 
-AgriAssist AI is an AI-powered Crop Advisory Chatbot designed to assist farmers and agricultural field supervisors through natural-language conversations. The application provides intelligent agricultural recommendations related to crop diseases, pest management, irrigation practices, soil health, fertilizer usage, and post-harvest handling.
+AgriAssist AI is a full-stack AI-powered Crop Advisory Chatbot designed to assist farmers and agricultural field supervisors through natural-language conversations. The application provides intelligent agricultural recommendations related to crop diseases, pest management, irrigation practices, soil health, fertilizer usage, and post-harvest handling.
 
-The system leverages Artificial Intelligence and the Gemini API to deliver context-aware agricultural guidance through an intuitive and user-friendly web interface.
+The project consists of a **Next.js frontend** and a **Node.js/Express backend REST API**, with **MongoDB Atlas** used for data storage and **Google Gemini API** powering AI-generated agricultural responses.
 
 ---
 
-## Project Links
+# Project Links
 
-### GitHub Repository
+## GitHub Repository
 
 https://github.com/harshavennapu/AI-Powered-Crop-Advisory-Chatbot-Prototype-
 
-### Figma Wireframes
-
-View-Only Figma Link:
+## Figma Wireframes
 
 https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes?node-id=0-1&t=tU32SfY9KcpudG7G-1
 
-### UI Component Showcase
-
-After running the application locally:
-
-```text
-http://localhost:3000/showcase
-```
-
 ---
 
-## Features
+# Features
 
-### AI-Powered Agricultural Assistance
+## AI-Powered Agricultural Assistance
 
 * AI-powered crop advisory chatbot
 * Natural language interaction
-* Crop disease guidance
+* Crop disease diagnosis support
 * Pest management recommendations
-* Irrigation best practices
+* Irrigation guidance
 * Soil health recommendations
 * Fertilizer suggestions
-* Post-harvest handling support
+* Post-harvest handling advice
+* Context-aware responses using Gemini AI
 
-### User Features
+## User Features
 
 * Secure user authentication
 * Interactive dashboard
-* Responsive web design
-* Mobile-friendly interface
+* Responsive web interface
+* Mobile-friendly design
 * Reusable UI component library
 * Component showcase page
 
 ---
 
-## Tech Stack
+# Tech Stack
 
-### Frontend
+## Frontend
 
 * Next.js
 * React.js
 * Tailwind CSS
 
-### Backend
+## Backend
 
 * Node.js
 * Express.js
+* REST API
 
-### Database
+## Database
 
 * MongoDB Atlas
+* Mongoose
 
-### AI Integration
+## AI Integration
 
-* Gemini API
+* Google Gemini API
 
-### Development Tools
+## Development Tools
 
 * Git
 * GitHub
-* VS Code
+* Visual Studio Code
+* Postman / Thunder Client
 
 ---
 
-## Project Structure
+# Project Structure
 
-```text
-app/
-├── page.jsx
-├── about/page.jsx
-├── dashboard/page.jsx
-├── login/page.jsx
-└── showcase/page.jsx
-
-components/
-├── Navbar.jsx
-├── Hero.jsx
-├── Card.jsx
-├── Footer.jsx
-└── ui/
-    ├── Button.jsx
-    ├── Input.jsx
-    ├── Modal.jsx
-    ├── Toast.jsx
-    ├── Loader.jsx
-    └── index.js
+```
+AgriAssist-AI/
+│
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── public/
+│   ├── package.json
+│   └── next.config.js
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── server.js
+│   ├── package.json
+│   ├── .env.example
+│   └── README.md
+│
+└── README.md
 ```
 
 ---
 
-## Available Routes
+# Frontend Routes
 
 | Route      | Description            |
 | ---------- | ---------------------- |
@@ -121,11 +117,28 @@ components/
 
 ---
 
-## UI Component Library
+# Backend REST API
 
-The project includes a reusable UI component library located in:
+The backend exposes RESTful API endpoints supporting CRUD operations.
 
-```text
+| Method | Endpoint          | Description    |
+| ------ | ----------------- | -------------- |
+| GET    | /api/crops        | Get all crops  |
+| GET    | /api/crops/:id    | Get crop by ID |
+| POST   | /api/crops        | Add a new crop |
+| PUT    | /api/crops/:id    | Update crop    |
+| DELETE | /api/crops/:id    | Delete crop    |
+| GET    | /api/crops/search | Search crops   |
+
+> Replace the above endpoints with your actual API endpoints if they are different.
+
+---
+
+# UI Component Library
+
+Reusable components are located in:
+
+```
 components/ui/
 ```
 
@@ -141,18 +154,22 @@ All components are exported through a centralized `index.js` file and demonstrat
 
 ---
 
-## Installation
+# Installation
 
-Clone the repository:
+## Clone Repository
 
 ```bash
 git clone https://github.com/harshavennapu/AI-Powered-Crop-Advisory-Chatbot-Prototype-
 ```
 
-Navigate to the project folder:
+---
+
+# Frontend Setup
+
+Navigate to the frontend folder:
 
 ```bash
-cd front-end
+cd frontend
 ```
 
 Install dependencies:
@@ -161,7 +178,7 @@ Install dependencies:
 npm install
 ```
 
-Run the development server:
+Run the frontend:
 
 ```bash
 npm run dev
@@ -169,50 +186,136 @@ npm run dev
 
 Open:
 
-```text
+```
 http://localhost:3000
 ```
 
-To view the UI Component Showcase:
+---
 
-```text
-http://localhost:3000/showcase
+# Backend Setup
+
+Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file using `.env.example`.
+
+Run the backend:
+
+```bash
+npm run dev
+```
+
+or
+
+```bash
+npm start
+```
+
+Backend runs at:
+
+```
+http://localhost:5000
 ```
 
 ---
 
-## Project Objective
+# Environment Variables
 
-The objective of AgriAssist AI is to provide accessible agricultural advisory support through an AI-powered chatbot. The platform aims to improve agricultural decision-making, reduce information gaps, and demonstrate the practical application of Artificial Intelligence in the agriculture sector.
+Create a `.env` file inside the backend folder using `.env.example`.
+
+Example:
+
+```
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+GEMINI_API_KEY=your_gemini_api_key
+```
 
 ---
 
-## Current Status
+# API Testing
 
-### Completed
+The REST API was tested using:
 
-* Frontend application setup
+* Postman
+* Thunder Client
+
+The exported API collection includes:
+
+* GET requests
+* POST requests
+* PUT requests
+* DELETE requests
+* Search endpoint
+* Saved example responses
+
+---
+
+# Error Handling
+
+The backend includes:
+
+* Global error handling middleware
+* Proper HTTP status codes
+* JSON error responses
+* Invalid route handling
+* Validation for malformed requests
+
+---
+
+# Project Objective
+
+The objective of AgriAssist AI is to provide accessible agricultural advisory support through an AI-powered chatbot. The platform aims to improve agricultural decision-making, reduce information gaps, and demonstrate the practical application of Artificial Intelligence in agriculture.
+
+---
+
+# Current Status
+
+## Completed
+
+* Frontend application
+* Responsive UI
 * Multi-page routing
-* Responsive user interface
-* Figma wireframes
 * Reusable UI component library
-* Component showcase page
-* GitHub integration
-
-### In Progress
-
-* Backend API development
-* MongoDB integration
-* Gemini API integration
-* AI chatbot functionality
-* Chat history management
+* Backend REST API
+* CRUD API endpoints
+* MongoDB Atlas integration
+* Google Gemini API integration
+* Error handling middleware
+* Environment variable configuration
+* API testing with Postman/Thunder Client
+* GitHub repository setup
 
 ---
 
-## Author
+# Future Enhancements
+
+* Voice-based chatbot interaction
+* Image-based crop disease detection
+* Real-time weather integration
+* Multilingual support
+* Farmer profile management
+* Chat history storage
+* AI recommendation analytics
+
+---
+
+# Author
 
 **Vennapu Sree Sai Chandra Harsha**
 
 M.Tech – Artificial Intelligence and Machine Learning
+
+TBI-GEU Summer Internship Program 2026
 
 TBI-GEU Summer Internship Program 2026
