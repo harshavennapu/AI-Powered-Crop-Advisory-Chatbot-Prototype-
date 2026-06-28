@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+html,
+body {
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+body {
+  background-image: url("/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode */
+html.dark body {
+  background: #111827;
+  color: white;
+}
+
+html.dark {
+  color-scheme: dark;
+}
