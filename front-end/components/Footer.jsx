@@ -73,7 +73,7 @@ export default function Footer() {
 
           <div className="space-y-3 text-gray-300">
             <p>📧 support@agroai.com</p>
-            <p>📞 +91 9321456984 </p>
+            <p>📞 +91 98765 43213</p>
             <p>📍 Hyderabad, India</p>
           </div>
         </div>
