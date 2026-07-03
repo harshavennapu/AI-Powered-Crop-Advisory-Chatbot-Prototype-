@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const protect = require("../middleware/authMiddleware");
+
 const {
   getAllUsers,
   getUserById,
@@ -9,13 +11,14 @@ const {
   searchUsers,
 } = require("../controllers/userController");
 
-// 🔥 IMPORTANT: put SEARCH FIRST
-router.get("/search", searchUsers);
+router.get("/search", protect, searchUsers);
 
-// CRUD routes
-router.get("/", getAllUsers);
-router.get("/:id", getUserById);
-router.put("/:id", updateUser);
-router.delete("/:id", deleteUser);
+router.get("/", protect, getAllUsers);
+
+router.get("/:id", protect, getUserById);
+
+router.put("/:id", protect, updateUser);
+
+router.delete("/:id", protect, deleteUser);
 
 module.exports = router;

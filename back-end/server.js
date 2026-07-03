@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+const cors =require("cors");
 require("dotenv").config();
 
 const connectDB = require("./config/db");
@@ -10,7 +10,7 @@ const userRoutes = require("./routes/userRoutes");
 const app = express();
 
 // ======================
-// DB Connection
+// Database Connection
 // ======================
 connectDB();
 
@@ -24,15 +24,37 @@ app.use(express.json());
 // Routes
 // ======================
 app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes); // ✅ FIXED HERE
+app.use("/api/users", userRoutes);
 
 // ======================
-// Test Route
+// Health Check
 // ======================
 app.get("/", (req, res) => {
-  res.json({
+  res.status(200).json({
     success: true,
     message: "🌱 AgroAI Backend is Running!",
+  });
+});
+
+// ======================
+// 404 Handler
+// ======================
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
+});
+
+// ======================
+// Global Error Handler
+// ======================
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+
+  res.status(500).json({
+    success: false,
+    message: "Internal Server Error",
   });
 });
 

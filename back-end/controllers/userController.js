@@ -26,10 +26,13 @@ const getUserById = async (req, res) => {
 const updateUser = async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    ).select("-password");
+    req.params.id,
+    req.body,
+    {
+        new: true,
+        runValidators: true,
+    }
+).select("-password");
 
     if (!user) {
       return res.status(404).json({ success: false, message: "User not found" });
