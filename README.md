@@ -1,8 +1,8 @@
-# 🌱 AgriAssist AI – Crop Advisory Chatbot
+# 🌱 Agro AI – Crop Advisory Chatbot
 
 ## Overview
 
-AgriAssist AI is a full-stack AI-powered Crop Advisory Chatbot designed to assist farmers and agricultural field supervisors through natural-language conversations. The application provides intelligent agricultural recommendations related to crop diseases, pest management, irrigation practices, soil health, fertilizer usage, and post-harvest handling.
+Agro AI is a full-stack AI-powered Crop Advisory Chatbot designed to assist farmers and agricultural field supervisors through natural-language conversations. The application provides intelligent agricultural recommendations related to crop diseases, pest management, irrigation practices, soil health, fertilizer usage, and post-harvest handling.
 
 The application consists of a **Next.js frontend**, a **Node.js/Express REST API backend**, **MongoDB Atlas** for database storage, and **Google Gemini AI** for generating intelligent agricultural recommendations.
 
@@ -348,7 +348,7 @@ The backend includes:
 
 # Project Objective
 
-The objective of AgriAssist AI is to provide intelligent agricultural guidance through an AI-powered chatbot. The system demonstrates the practical use of Artificial Intelligence, Full-Stack Web Development, REST APIs, Cloud Database Integration, and Responsive UI Design for solving real-world agricultural problems.
+The objective of Agro AI is to provide intelligent agricultural guidance through an AI-powered chatbot. The system demonstrates the practical use of Artificial Intelligence, Full-Stack Web Development, REST APIs, Cloud Database Integration, and Responsive UI Design for solving real-world agricultural problems.
 
 ---
 
