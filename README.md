@@ -116,7 +116,9 @@ The project database structure is shown below.
 > **Note:** Replace the placeholder image with your exported Week 5 schema diagram.
 
 ```DatabaseSchema Diagram
-<img width="804" height="600" alt="W5_SchemaDiagram_TBI-26100998" src="https://github.com/user-attachments/assets/6ca5b21a-2148-4857-9b69-120fbec2cdc5" />
+ <img width="804" height="600" alt="W5_SchemaDiagram_TBI-26100998" src="https://github.com/user-attachments/assets/73c0cbf9-d6b5-44a0-b710-690c5b3007d7" />
+
+
 
 ```
 
