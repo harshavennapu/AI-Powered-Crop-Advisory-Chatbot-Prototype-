@@ -108,21 +108,13 @@ Current models include:
 * Additional models can be added as the application grows.
 
 ---
-
-# Database Schema
+## Database Schema
 
 The project database structure is shown below.
 
-> **Note:** Replace the placeholder image with your exported Week 5 schema diagram.
-
-```DatabaseSchema Diagram
- 
 ![Database Schema](Docs/W5_SchemaDiagram_TBI-26100998.png)
 
 **Figure 1:** Database schema of the MongoDB User collection used in AgriAssist AI.
-
-```
-
 
 ---
 
