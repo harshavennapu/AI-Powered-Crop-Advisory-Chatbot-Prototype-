@@ -116,9 +116,10 @@ The project database structure is shown below.
 > **Note:** Replace the placeholder image with your exported Week 5 schema diagram.
 
 ```DatabaseSchema Diagram
- <img width="804" height="600" alt="W5_SchemaDiagram_TBI-26100998" src="https://github.com/user-attachments/assets/73c0cbf9-d6b5-44a0-b710-690c5b3007d7" />
+ 
+![Database Schema](Docs/W5_SchemaDiagram_TBI-26100998.png)
 
-
+**Figure 1:** Database schema of the MongoDB User collection used in AgriAssist AI.
 
 ```
 
