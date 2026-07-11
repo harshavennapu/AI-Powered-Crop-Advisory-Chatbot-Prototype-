@@ -52,7 +52,7 @@ useEffect(() => {
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
 
         {/* Welcome */}
-        <div className="rounded-3xl border border-green-300/30 bg-gradient-to-r from-green-900/80 via-emerald-800/80 to-green-700/80 p-8 shadow-2xl backdrop-blur-xl">
+        <div className="rounded-3xl border border-green-300/30 bg-linear-to-r from-green-900/80 via-emerald-800/80 to-green-700/80 p-8 shadow-2xl backdrop-blur-xl">
 
           <h1 className="text-4xl font-bold text-yellow-300">
             👋 Welcome {user}
@@ -95,7 +95,7 @@ useEffect(() => {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className={`rounded-2xl bg-gradient-to-r ${feature.color} p-1 shadow-xl hover:-translate-y-2 transition`}
+                className={`rounded-2xl bg-linear-to-r ${feature.color} p-1 shadow-xl hover:-translate-y-2 transition`}
               >
                 <div className="bg-white p-6 rounded-2xl">
 
