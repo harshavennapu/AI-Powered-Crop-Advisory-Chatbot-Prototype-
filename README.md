@@ -2,9 +2,9 @@
 
 ## Overview
 
-Agro AI is a full-stack AI-powered Crop Advisory Chatbot designed to assist farmers and agricultural field supervisors through natural-language conversations. The application provides intelligent agricultural recommendations related to crop diseases, pest management, irrigation practices, soil health, fertilizer usage, and post-harvest handling.
+Agro AI is a full-stack AI-powered Crop Advisory Chatbot developed to assist farmers with intelligent agricultural recommendations. The application provides secure user authentication, AI-powered assistance, and a responsive user interface built with modern web technologies.
 
-The application consists of a **Next.js frontend**, a **Node.js/Express REST API backend**, **MongoDB Atlas** for database storage, and **Google Gemini AI** for generating intelligent agricultural recommendations.
+The project consists of a **Next.js frontend**, **Node.js/Express backend**, **MongoDB Atlas** database, **JWT Authentication**, **Google OAuth Login**, and **Google Gemini AI** integration.
 
 ---
 
@@ -16,33 +16,42 @@ https://github.com/harshavennapu/AI-Powered-Crop-Advisory-Chatbot-Prototype-
 
 ## Figma Wireframes
 
-https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes?node-id=0-1&t=tU32SfY9KcpudG7G-1
+https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes?node-id=0-1
 
 ---
 
 # Features
 
-## 🌾 AI-Powered Agricultural Assistance
+## 🌾 AI Features
 
-* AI-powered crop advisory chatbot
-* Natural language conversation
-* Crop disease diagnosis assistance
-* Pest management recommendations
-* Irrigation guidance
-* Soil health analysis
-* Fertilizer recommendations
-* Post-harvest handling suggestions
-* Context-aware responses using Google Gemini AI
+- AI-powered Crop Advisory
+- Crop Disease Guidance
+- Pest Detection Assistance
+- Weather Insights
+- Soil Analysis
+- Market Price Information
+- Smart Irrigation Suggestions
 
-## 👤 User Features
+## 👤 Authentication Features
 
-* Secure JWT Authentication
-* User Registration & Login
-* Interactive Dashboard
-* Responsive Design
-* Mobile-Friendly Interface
-* Reusable UI Component Library
-* Component Showcase Page
+- User Registration
+- User Login
+- Google OAuth Login
+- JWT Authentication
+- Protected Routes
+- Logout Functionality
+- Secure Password Hashing (bcrypt)
+- Request Validation
+- API Rate Limiting
+
+## 💻 Frontend Features
+
+- Responsive Design
+- Dashboard
+- Modern UI
+- Mobile Friendly
+- Dark Mode Support
+- Component-based Architecture
 
 ---
 
@@ -50,152 +59,156 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes?node-id=0-
 
 ## Frontend
 
-* Next.js
-* React.js
-* Tailwind CSS
+- Next.js
+- React.js
+- Tailwind CSS
 
 ## Backend
 
-* Node.js
-* Express.js
-* REST API
+- Node.js
+- Express.js
+- REST API
 
 ## Database
 
-* MongoDB Atlas
-* Mongoose ODM
+- MongoDB Atlas
+- Mongoose
 
-## AI Integration
+## Authentication
 
-* Google Gemini API
+- JWT
+- Google OAuth 2.0
+- Passport.js
+- bcryptjs
+
+## Validation & Security
+
+- express-validator
+- express-rate-limit
+- CORS
 
 ## Development Tools
 
-* Git
-* GitHub
-* Visual Studio Code
-* Postman
-* Thunder Client
-
----
-
-# Database Choice
-
-This project uses **MongoDB Atlas** as the primary cloud database and **Mongoose** as the Object Data Modeling (ODM) library.
-
-### Why MongoDB?
-
-* Flexible NoSQL document database
-* Stores JSON-like documents efficiently
-* Excellent integration with Node.js and Express
-* Highly scalable for AI-powered applications
-* Suitable for storing user data, crop information, and chatbot-related records
-
----
-
-# Database Models
-
-The application stores data using Mongoose models located inside:
-
-```text
-backend/models/
-```
-
-Current models include:
-
-* User
-* Crop (or your actual model names)
-* Additional models can be added as the application grows.
-
----
-## Database Schema
-
-The project database structure is shown below.
-
-![Database Schema](Docs/W5_SchemaDiagram_TBI-26100998.png)
-
-**Figure 1:** Database schema of the MongoDB User collection used in AgriAssist AI.
+- Git
+- GitHub
+- Visual Studio Code
+- Postman
+- Thunder Client
+- Google Cloud Console
 
 ---
 
 # Project Structure
 
 ```text
-AgriAssist-AI/
+AI-Powered-Crop-Advisory-Chatbot-Prototype-
+
 │
-├── frontend/
+├── front-end/
 │   ├── app/
 │   ├── components/
 │   ├── public/
-│   ├── package.json
-│   └── next.config.js
+│   └── package.json
 │
-├── backend/
+├── back-end/
 │   ├── config/
 │   ├── controllers/
 │   ├── middleware/
 │   ├── models/
 │   ├── routes/
-│   ├── utils/
 │   ├── server.js
-│   ├── package.json
-│   ├── .env.example
-│   └── README.md
+│   └── package.json
 │
-├── docs/
-│   └── W5_SchemaDiagram_InternID.png
+├── Docs/
+│
+├── postman/
 │
 └── README.md
 ```
 
 ---
 
+# Database
+
+This project uses **MongoDB Atlas** with **Mongoose ODM**.
+
+## User Model
+
+- Name
+- Email
+- Password (Encrypted)
+- CreatedAt
+- UpdatedAt
+
+---
+
+## Database Schema
+
+![Database Schema](Docs/W5_SchemaDiagram_TBI-26100998.png)
+
+---
+
 # Frontend Routes
 
-| Route      | Description           |
-| ---------- | --------------------- |
-| /          | Home Page             |
-| /about     | About Page            |
-| /dashboard | User Dashboard        |
-| /login     | Login Page            |
-| /showcase  | UI Component Showcase |
+| Route | Description |
+|--------|-------------|
+| / | Home |
+| /about | About |
+| /login | Login |
+| /signup | Register |
+| /dashboard | Protected Dashboard |
+| /ai_features | AI Features |
+| /market_prices | Market Prices |
+| /detail_listview | Weather Details |
+| /showcase | Component Showcase |
 
 ---
 
-# Backend REST API
+# Backend REST APIs
 
-The backend provides RESTful CRUD APIs.
+## Authentication APIs
 
-| Method | Endpoint          | Description    |
-| ------ | ----------------- | -------------- |
-| GET    | /api/crops        | Get all crops  |
-| GET    | /api/crops/:id    | Get crop by ID |
-| POST   | /api/crops        | Create crop    |
-| PUT    | /api/crops/:id    | Update crop    |
-| DELETE | /api/crops/:id    | Delete crop    |
-| GET    | /api/crops/search | Search crops   |
+| Method | Endpoint | Description |
+|--------|------------------------------|----------------|
+| POST | /api/auth/register | Register User |
+| POST | /api/auth/login | Login User |
+| GET | /api/auth/google | Google Login |
+| GET | /api/auth/google/callback | Google Callback |
 
-> Update the above table if your actual API endpoints differ.
+## User APIs
+
+| Method | Endpoint | Description |
+|--------|-------------------------|----------------|
+| GET | /api/users | Get All Users |
+| GET | /api/users/:id | Get User By ID |
+| PUT | /api/users/:id | Update User |
+| DELETE | /api/users/:id | Delete User |
+| GET | /api/users/search | Search Users |
 
 ---
 
-# UI Component Library
+# Authentication Flow
 
-Reusable components are located in:
+1. User registers using Email and Password.
+2. Password is hashed using bcrypt.
+3. User logs in.
+4. Server returns JWT Token.
+5. JWT is stored in Local Storage.
+6. Protected APIs require Authorization Token.
+7. Users can also login using Google OAuth.
 
-```text
-components/ui/
-```
+---
 
-Available Components
+# Security Features
 
-* Button
-* Input
-* Modal
-* Toast
-* Loader
-
-All UI components are exported through a centralized `index.js` file and demonstrated on the Showcase page.
+- JWT Authentication
+- Google OAuth
+- Password Hashing (bcrypt)
+- Protected Routes
+- Express Validator
+- Express Rate Limiting
+- Environment Variables
+- CORS Protection
 
 ---
 
@@ -211,27 +224,15 @@ git clone https://github.com/harshavennapu/AI-Powered-Crop-Advisory-Chatbot-Prot
 
 # Frontend Setup
 
-Navigate to the frontend directory.
-
 ```bash
-cd frontend
-```
-
-Install dependencies.
-
-```bash
+cd front-end
 npm install
-```
-
-Run the development server.
-
-```bash
 npm run dev
 ```
 
-Frontend URL
+Frontend
 
-```text
+```
 http://localhost:3000
 ```
 
@@ -239,71 +240,34 @@ http://localhost:3000
 
 # Backend Setup
 
-Navigate to the backend directory.
-
 ```bash
-cd backend
-```
-
-Install dependencies.
-
-```bash
+cd back-end
 npm install
-```
-
-Create a `.env` file using `.env.example`.
-
-Run the backend.
-
-```bash
 npm run dev
 ```
 
-or
+Backend
 
-```bash
-npm start
 ```
-
-Backend URL
-
-```text
 http://localhost:5000
 ```
 
 ---
 
-# Set Up the Database
-
-This project uses **MongoDB Atlas**.
-
-### Steps
-
-1. Create a MongoDB Atlas account.
-2. Create a new cluster.
-3. Create a database user.
-4. Whitelist your IP address.
-5. Copy the MongoDB connection string.
-6. Create a `.env` file inside the backend folder.
-7. Add the required environment variables.
-8. Start the backend server.
-
-The application automatically connects to MongoDB Atlas using Mongoose.
-
----
-
 # Environment Variables
 
-Create a `.env` file using the provided `.env.example`.
-
-Example
+Create a `.env` file inside `back-end`.
 
 ```env
 PORT=5000
 
 MONGODB_URI=your_mongodb_connection_string
 
-JWT_SECRET=your_secret_key
+JWT_SECRET=your_jwt_secret
+
+GOOGLE_CLIENT_ID=your_google_client_id
+
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 
 GEMINI_API_KEY=your_gemini_api_key
 ```
@@ -312,19 +276,20 @@ GEMINI_API_KEY=your_gemini_api_key
 
 # API Testing
 
-The backend REST APIs were tested using:
+The APIs were tested using:
 
-* Postman
-* Thunder Client
+- Postman
+- Thunder Client
 
-The API collection includes:
+The Postman Collection includes:
 
-* GET Requests
-* POST Requests
-* PUT Requests
-* DELETE Requests
-* Search Endpoint
-* Saved Sample Responses
+- User Registration
+- User Login
+- Google OAuth Login
+- JWT Authentication
+- Protected CRUD APIs
+- Search User API
+- Automatic JWT Token Storage
 
 ---
 
@@ -332,18 +297,13 @@ The API collection includes:
 
 The backend includes:
 
-* Global Error Handling Middleware
-* Proper HTTP Status Codes
-* JSON Error Responses
-* Invalid Route Handling
-* Request Validation
-* Database Error Handling
-
----
-
-# Project Objective
-
-The objective of Agro AI is to provide intelligent agricultural guidance through an AI-powered chatbot. The system demonstrates the practical use of Artificial Intelligence, Full-Stack Web Development, REST APIs, Cloud Database Integration, and Responsive UI Design for solving real-world agricultural problems.
+- Global Error Handler
+- Express Validator
+- JWT Middleware
+- Rate Limiter
+- Proper HTTP Status Codes
+- Invalid Route Handler
+- JSON Error Responses
 
 ---
 
@@ -351,34 +311,34 @@ The objective of Agro AI is to provide intelligent agricultural guidance through
 
 ## Completed
 
-* Responsive Frontend Application
-* Multi-page Navigation
-* Reusable UI Component Library
-* REST API Development
-* CRUD Operations
-* MongoDB Atlas Integration
-* Mongoose Database Models
-* Google Gemini AI Integration
-* JWT Authentication
-* Error Handling Middleware
-* Environment Variable Configuration
-* API Testing using Postman and Thunder Client
-* GitHub Repository Setup
-* Database Integration with Live CRUD Operations
+- Responsive Frontend
+- User Registration
+- User Login
+- Google OAuth Login
+- JWT Authentication
+- Protected Routes
+- CRUD APIs
+- MongoDB Atlas Integration
+- Input Validation
+- Password Hashing
+- API Rate Limiting
+- Postman API Testing
+- Global Error Handling
+- GitHub Repository
 
 ---
 
 # Future Enhancements
 
-* Voice-Based Chatbot
-* Image-Based Crop Disease Detection
-* Weather API Integration
-* Multilingual Support
-* Farmer Profile Management
-* Chat History Storage
-* AI Recommendation Analytics
-* Offline Support
-* Role-Based Access Control
+- Voice-Based Chatbot
+- Image-Based Disease Detection
+- Weather API Integration
+- Farmer Profiles
+- Chat History
+- Email Verification
+- Forgot Password
+- Refresh Tokens
+- Role-Based Access Control
 
 ---
 
@@ -386,7 +346,7 @@ The objective of Agro AI is to provide intelligent agricultural guidance through
 
 **Vennapu Sree Sai Chandra Harsha**
 
-M.Tech – Artificial Intelligence and Machine Learning
+M.Tech – Artificial Intelligence & Machine Learning
 
 TBI-GEU Summer Internship Program 2026
 
