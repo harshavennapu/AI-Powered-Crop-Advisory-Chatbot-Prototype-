@@ -22,6 +22,7 @@ export default function Navbar() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     setIsLoggedIn(false);
     window.location.href = "/login";
   };
@@ -29,9 +30,11 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg shadow-lg">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 transition hover:scale-105">
+        <Link
+          href="/"
+          className="flex items-center gap-3 transition hover:scale-105"
+        >
           <Image
             src="/logo1.png"
             alt="AgroAI Logo"
@@ -39,14 +42,11 @@ export default function Navbar() {
             height={55}
             className="rounded-full border-2 border-green-600 shadow-md"
           />
-          <span className="text-2xl font-extrabold text-green-700">
-            AgroAI
-          </span>
+          <span className="text-2xl font-extrabold text-green-700">AgroAI</span>
         </Link>
 
         {/* Navigation */}
         <ul className="flex items-center gap-8">
-
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
@@ -79,7 +79,6 @@ export default function Navbar() {
               </button>
             </li>
           )}
-
         </ul>
       </nav>
     </header>

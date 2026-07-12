@@ -1,21 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [loading, setLoading] = useState(false);
 
+  // Handle Google OAuth callback
+  useEffect(() => {
+    const token = searchParams.get("token");
+    const name = searchParams.get("name");
+    const email = searchParams.get("email");
+
+    if (token) {
+      localStorage.setItem("token", token);
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          name,
+          email,
+        }),
+      );
+
+      alert("Google Login Successful!");
+      router.replace("/dashboard");
+    }
+  }, [searchParams, router]);
+
+  // Email & Password Login
   const handleLogin = async () => {
     if (!email || !password) {
       alert("Please enter email and password.");
@@ -47,9 +71,9 @@ export default function LoginPage() {
       // Save JWT Token
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
+
       alert("Login Successful!");
 
-      // Redirect to Dashboard
       router.push("/dashboard");
     } catch (error) {
       console.error(error);
@@ -59,14 +83,17 @@ export default function LoginPage() {
     setLoading(false);
   };
 
+  // Google Login
+  const handleGoogleLogin = () => {
+    window.location.href = "http://localhost:5000/api/auth/google";
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
 
       <main className="flex flex-1 items-center justify-center px-4 py-12">
-
         <div className="w-full max-w-md rounded-3xl bg-white p-8 shadow-2xl">
-
           {/* Logo */}
           <div className="mb-6 flex justify-center">
             <Image
@@ -126,6 +153,22 @@ export default function LoginPage() {
             {loading ? "Logging In..." : "Login"}
           </button>
 
+          {/* Divider */}
+          <div className="my-6 flex items-center">
+            <div className="h-px flex-1 bg-gray-300"></div>
+            <span className="mx-3 text-gray-500">OR</span>
+            <div className="h-px flex-1 bg-gray-300"></div>
+          </div>
+
+          {/* Google Login */}
+          <button
+            onClick={handleGoogleLogin}
+            className="w-full flex items-center justify-center gap-3 rounded-xl border-2 border-yellow-400 bg-yellow-50 py-3 text-lg font-semibold text-green-900 transition duration-300 hover:bg-yellow-100 hover:border-yellow-500"
+          >
+            <FcGoogle size={24} />
+            Sign in with Google
+          </button>
+
           {/* Signup */}
           <div className="mt-6 text-center">
             <p className="text-gray-600">
@@ -138,9 +181,7 @@ export default function LoginPage() {
               </Link>
             </p>
           </div>
-
         </div>
-
       </main>
 
       <Footer />

@@ -1,5 +1,6 @@
 "use client";
-
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -37,15 +38,22 @@ const features = [
 ];
 
 export default function AIFeaturesPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      router.replace("/login");
+    }
+  }, [router]);
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
 
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
-
         {/* Header */}
         <div className="rounded-3xl border border-green-300/30 bg-linear-to-r from-green-900/80 via-emerald-800/80 to-green-700/80 p-8 shadow-2xl backdrop-blur-xl">
-
           <h1 className="text-4xl font-bold text-yellow-300">
             🤖 AI Farming Features
           </h1>
@@ -54,12 +62,10 @@ export default function AIFeaturesPage() {
             Explore the intelligent services offered by AgroAI to help farmers
             improve productivity and make data-driven agricultural decisions.
           </p>
-
         </div>
 
         {/* Feature Cards */}
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-
           {features.map((feature) => (
             <div
               key={feature.title}
@@ -69,18 +75,14 @@ export default function AIFeaturesPage() {
                 {feature.title}
               </h2>
 
-              <p className="mt-4 text-green-100">
-                {feature.description}
-              </p>
+              <p className="mt-4 text-green-100">{feature.description}</p>
 
               <button className="mt-6 rounded-lg bg-yellow-400 px-5 py-2 font-semibold text-green-900 transition hover:bg-yellow-300">
                 Learn More
               </button>
             </div>
           ))}
-
         </div>
-
       </main>
 
       <Footer />
