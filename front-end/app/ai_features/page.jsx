@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -39,6 +39,10 @@ const features = [
 
 export default function AIFeaturesPage() {
   const router = useRouter();
+  const [prompt, setPrompt] = useState("");
+  const [response, setResponse] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -47,6 +51,40 @@ export default function AIFeaturesPage() {
       router.replace("/login");
     }
   }, [router]);
+  const generateAIResponse = async () => {
+    if (!prompt.trim()) {
+      setError("Please enter a farming question.");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+    setResponse("");
+
+    try {
+      const res = await fetch("http://localhost:5000/api/ai/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      setResponse(data.response);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -82,6 +120,46 @@ export default function AIFeaturesPage() {
               </button>
             </div>
           ))}
+        </div>
+        <div className="mt-16 rounded-2xl border border-green-300/30 bg-white/10 p-8 shadow-xl backdrop-blur-md">
+          <h2 className="text-3xl font-bold text-yellow-300">🌱 Ask AgroAI</h2>
+
+          <p className="mt-2 text-green-100">
+            Ask any agriculture-related question and receive an AI-powered
+            answer.
+          </p>
+
+          <textarea
+            rows={5}
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+            placeholder="Example: How can I improve rice crop yield?"
+            className="mt-6 w-full rounded-lg border border-green-400 bg-green-950 p-4 text-white outline-none"
+          />
+
+          <button
+            onClick={generateAIResponse}
+            disabled={loading}
+            className="mt-5 rounded-lg bg-yellow-400 px-6 py-3 font-semibold text-green-900 hover:bg-yellow-300 disabled:opacity-50"
+          >
+            {loading ? "Generating..." : "Generate AI Response"}
+          </button>
+
+          {error && (
+            <div className="mt-6 rounded-lg bg-red-600 p-4 text-white">
+              {error}
+            </div>
+          )}
+
+          {response && (
+            <div className="mt-6 rounded-lg bg-green-900 p-5 text-green-100 whitespace-pre-wrap">
+              <h3 className="mb-3 text-xl font-bold text-yellow-300">
+                AI Response
+              </h3>
+
+              {response}
+            </div>
+          )}
         </div>
       </main>
 
