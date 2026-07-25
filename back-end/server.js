@@ -9,9 +9,13 @@ const connectDB = require("./config/db");
 // Passport Config
 require("./config/passport");
 
+const marketRoutes = require("./routes/marketRoutes");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const aiRoutes = require("./routes/aiRoutes");
+const cropRoutes = require("./routes/cropRoutes");
+const pestRoutes = require("./routes/pestRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
 const app = express();
 
 // ======================
@@ -46,6 +50,10 @@ app.use(passport.session());
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/ai", aiRoutes);
+app.use("/api/crops", cropRoutes);
+app.use("/api/market", marketRoutes);
+app.use("/api/pests", pestRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 // ======================
 // Health Check
 // ======================

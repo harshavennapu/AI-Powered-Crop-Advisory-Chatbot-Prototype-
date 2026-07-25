@@ -1,4 +1,8 @@
-const axios = require("axios");
+const Groq = require("groq-sdk");
+
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY,
+});
 
 const generateResponse = async (req, res) => {
   try {
@@ -11,33 +15,34 @@ const generateResponse = async (req, res) => {
       });
     }
 
-    const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
-      {
-        contents: [
-          {
-            parts: [
-              {
-                text: `You are an agricultural expert. Give a short answer (maximum 120 words) in simple English.\n\nQuestion: ${prompt}`,
-              },
-            ],
-          },
-        ],
-      }
-    );
+    const completion = await groq.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are an agricultural expert. Give short, accurate answers in simple English (maximum 120 words).",
+        },
+        {
+          role: "user",
+          content: prompt,
+        },
+      ],
+      temperature: 0.5,
+      max_tokens: 200,
+    });
 
     res.status(200).json({
       success: true,
-      response:
-        response.data.candidates[0].content.parts[0].text,
+      response: completion.choices[0].message.content,
     });
 
   } catch (error) {
-    console.error(error.response?.data || error.message);
+    console.error(error);
 
     res.status(500).json({
       success: false,
-      error: error.response?.data || error.message,
+      message: error.message,
     });
   }
 };

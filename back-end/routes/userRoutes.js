@@ -9,12 +9,13 @@ const {
   updateUser,
   deleteUser,
   searchUsers,
+  getProfile,
+  updateProfile,
 } = require("../controllers/userController");
-
 router.get("/search", protect, searchUsers);
-
+router.get("/profile", protect, getProfile);
+router.put("/profile", protect, updateProfile);
 router.get("/", protect, getAllUsers);
-
 router.get("/:id", protect, getUserById);
 
 router.put("/:id", protect, updateUser);
