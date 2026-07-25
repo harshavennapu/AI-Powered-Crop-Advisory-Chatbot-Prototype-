@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
@@ -14,6 +15,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -29,7 +31,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg shadow-lg">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
         {/* Logo */}
         <Link
           href="/"
@@ -38,15 +40,17 @@ export default function Navbar() {
           <Image
             src="/logo1.png"
             alt="AgroAI Logo"
-            width={55}
-            height={55}
+            width={45}
+            height={45}
             className="rounded-full border-2 border-green-600 shadow-md"
           />
-          <span className="text-2xl font-extrabold text-green-700">AgroAI</span>
+          <span className="text-xl font-extrabold text-green-700 sm:text-2xl">
+            AgroAI
+          </span>
         </Link>
 
         {/* Navigation */}
-        <ul className="flex items-center gap-8">
+        <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
@@ -80,7 +84,45 @@ export default function Navbar() {
             </li>
           )}
         </ul>
+        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden">
+          {menuOpen ? <X size={30} /> : <Menu size={30} />}
+        </button>
       </nav>
+      {menuOpen && (
+        <div className="border-t bg-white md:hidden">
+          <div className="flex flex-col p-4 space-y-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="font-semibold text-gray-700 hover:text-green-600"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <ThemeToggle />
+
+            {!isLoggedIn ? (
+              <Link
+                href="/login"
+                onClick={() => setMenuOpen(false)}
+                className="rounded-lg bg-green-600 px-4 py-2 text-center text-white"
+              >
+                Login
+              </Link>
+            ) : (
+              <button
+                onClick={handleLogout}
+                className="rounded-lg bg-red-600 px-4 py-2 text-white"
+              >
+                Logout
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </header>
   );
 }
