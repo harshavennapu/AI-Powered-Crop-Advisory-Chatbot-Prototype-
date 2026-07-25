@@ -1,4 +1,5 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -11,48 +12,107 @@ const features = [
     title: "🌱 AI Crop Advisory",
     description:
       "Get AI-powered crop recommendations based on soil and weather conditions.",
-    color: "from-green-500 to-emerald-600",
+    color: "from-green-500 via-green-500 to-emerald-600",
     link: "/ai_features",
   },
   {
-    title: "☁️ Weather Insights",
+    title: "🌦️ Weather Insights",
     description:
       "View weather forecasts and alerts to plan farming activities.",
-    color: "from-blue-500 to-cyan-600",
+    color: "from-sky-500 via-sky-500 to-blue-600",
     link: "/detail_listview",
   },
   {
     title: "🐛 Pest Detection",
     description: "Detect crop diseases and pests using AI image analysis.",
-    color: "from-orange-500 to-red-500",
+    color: "from-orange-500 via-orange-500 to-red-500",
     link: "/pest_detection",
   },
   {
     title: "📈 Market Prices",
     description: "Check the latest crop market prices and trends.",
-    color: "from-purple-500 to-indigo-600",
+    color: "from-violet-500 via-violet-500 to-purple-600",
     link: "/market_prices",
   },
 ];
 
 export default function DashboardPage() {
-  const [user, setUser] = useState("Guest");
   const router = useRouter();
 
+  const [user, setUser] = useState("Guest");
+  const [loading, setLoading] = useState(true);
+
+  const [stats, setStats] = useState({
+    users: 0,
+    crops: 0,
+    aiFeatures: 0,
+  });
+
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const storedUser = localStorage.getItem("user");
+    const loadDashboard = async () => {
+      const token = localStorage.getItem("token");
 
-    if (!token) {
-      router.push("/login");
-      return;
-    }
+      if (!token) {
+        router.push("/login");
+        return;
+      }
 
-    if (storedUser) {
-      const parsedUser = JSON.parse(storedUser);
-      setUser(parsedUser.name || "User");
-    }
-  }, []);
+      try {
+        // Profile API
+        const profileRes = await fetch(
+          "http://localhost:5000/api/users/profile",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        );
+
+        const profileData = await profileRes.json();
+
+        if (!profileData.success) {
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
+          router.push("/login");
+          return;
+        }
+
+        setUser(profileData.user.name);
+
+        // Dashboard Stats API
+        const statsRes = await fetch(
+          "http://localhost:5000/api/dashboard/stats",
+        );
+
+        const statsData = await statsRes.json();
+
+        if (statsData.success) {
+          setStats(statsData.stats);
+        }
+
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+
+        router.push("/login");
+      }
+    };
+
+    loadDashboard();
+  }, [router]);
+
+  if (loading) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <h2 className="text-3xl font-bold text-green-600">
+          Loading Dashboard...
+        </h2>
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -70,37 +130,46 @@ export default function DashboardPage() {
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="mt-10 grid md:grid-cols-3 gap-6">
-          <div className="rounded-2xl bg-white/10 p-6 text-center backdrop-blur-md">
-            <h2 className="text-4xl font-bold text-yellow-300">4</h2>
-            <p className="text-white mt-2">AI Services</p>
+        {/* Dashboard Stats */}
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="rounded-2xl bg-white/10 p-6 text-center backdrop-blur-md shadow-lg">
+            <h2 className="text-4xl font-bold text-yellow-300">
+              {stats.users}
+            </h2>
+
+            <p className="mt-2 text-white">Registered Users</p>
           </div>
 
-          <div className="rounded-2xl bg-white/10 p-6 text-center backdrop-blur-md">
-            <h2 className="text-4xl font-bold text-yellow-300">24/7</h2>
-            <p className="text-white mt-2">Monitoring</p>
+          <div className="rounded-2xl bg-white/10 p-6 text-center backdrop-blur-md shadow-lg">
+            <h2 className="text-4xl font-bold text-yellow-300">
+              {stats.crops}
+            </h2>
+
+            <p className="mt-2 text-white">Total Crops</p>
           </div>
 
-          <div className="rounded-2xl bg-white/10 p-6 text-center backdrop-blur-md">
-            <h2 className="text-4xl font-bold text-yellow-300">100%</h2>
-            <p className="text-white mt-2">AI Support</p>
+          <div className="rounded-2xl bg-white/10 p-6 text-center backdrop-blur-md shadow-lg">
+            <h2 className="text-4xl font-bold text-yellow-300">
+              {stats.aiFeatures}
+            </h2>
+
+            <p className="mt-2 text-white">AI Features</p>
           </div>
         </div>
 
-        {/* Features */}
+        {/* Dashboard Features */}
         <section className="mt-12">
-          <h2 className="text-4xl font-bold text-yellow-300 text-center mb-8">
+          <h2 className="mb-8 text-center text-4xl font-bold text-yellow-300">
             🌾 Dashboard Features
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid gap-8 md:grid-cols-2">
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className={`rounded-2xl bg-linear-to-r ${feature.color} p-1 shadow-xl hover:-translate-y-2 transition`}
+                className={`rounded-3xl bg-linear-to-r ${feature.color} p-1 shadow-xl transition duration-300 hover:-translate-y-2`}
               >
-                <div className="bg-white p-6 rounded-2xl">
+                <div className="h-full rounded-[22px] bg-white p-8">
                   <h3 className="text-2xl font-bold text-gray-800">
                     {feature.title}
                   </h3>
@@ -108,7 +177,7 @@ export default function DashboardPage() {
                   <p className="mt-4 text-gray-600">{feature.description}</p>
 
                   <Link href={feature.link}>
-                    <button className="mt-6 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">
+                    <button className="mt-6 rounded-lg bg-green-600 px-6 py-2 text-white transition hover:bg-green-700">
                       Explore
                     </button>
                   </Link>
