@@ -1,10 +1,23 @@
-# 🌱 Agro AI – AI-Powered Crop Advisory Chatbot
+# 🌱 Agro AI – AI-Powered Crop Advisory Platform
 
 ## Overview
 
-Agro AI is a full-stack AI-powered Crop Advisory Chatbot developed to assist farmers with intelligent agricultural recommendations. The application provides secure user authentication, AI-powered assistance, and a responsive user interface built with modern web technologies.
+Agro AI is a full-stack AI-powered Crop Advisory Platform developed as part of the **TBI-GEU Summer Internship Program 2026**. The platform helps farmers make informed agricultural decisions through Artificial Intelligence, secure authentication, crop management, and modern web technologies.
 
-The project consists of a **Next.js frontend**, **Node.js/Express backend**, **MongoDB Atlas** database, **JWT Authentication**, **Google OAuth Login**, and **Google Gemini AI** integration. Users can securely authenticate, access protected pages, and interact with an AI-powered Crop Advisory assistant that provides intelligent farming recommendations in real time.
+The application consists of a **Next.js frontend**, **Node.js/Express backend**, **MongoDB Atlas** database, **JWT Authentication**, **Google OAuth Login**, and **Google Gemini AI** integration.
+
+Users can securely register, log in, manage crop information, access protected pages, and receive AI-powered farming recommendations in real time.
+
+### Key Highlights
+
+- 🌱 AI Crop Advisory using Google Gemini AI
+- 🌾 Crop Information Management (CRUD)
+- 📊 Dashboard with Real-time Statistics
+- 🔐 JWT Authentication & Google OAuth
+- 🐛 Pest Detection Module
+- 💹 Market Price Module
+- 📱 Fully Responsive User Interface
+- 🌙 Dark Mode Support
 
 ---
 
@@ -16,34 +29,56 @@ https://github.com/harshavennapu/AI-Powered-Crop-Advisory-Chatbot-Prototype-
 
 ## Figma Wireframes
 
-https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes?node-id=0-1
+https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes
 
 ---
 
 # Documentation
 
 - README.md
-- PROMPTS.md (Week 7 Prompt Engineering Log)
+- PROMPTS.md (Prompt Engineering Log)
 - Postman Collection
 - Database Schema
 - Weekly Deliverables
+- Frontend Completion Report
 
 ---
 
 # Features
 
-## 🌾 AI Features
+## 🤖 AI Features
 
 - AI-powered Crop Advisory using Google Gemini AI
-- Real-time AI-generated farming recommendations
-- Crop Disease Guidance
-- Pest Detection Assistance
-- Weather Insights
-- Soil Analysis
-- Market Price Information
-- Smart Irrigation Suggestions
-- Loading State while generating AI responses
+- Intelligent Farming Recommendations
+- Smart Prompt Processing
+- Real-time AI Response Generation
+- Loading State while generating responses
 - User-friendly Error Handling
+- Agriculture-focused AI Assistance
+
+---
+
+## 🌾 Crop Management Features
+
+- Add Crop
+- View Crop Details
+- Update Crop Information
+- Delete Crop
+- Crop Details Modal
+- Real-time CRUD Operations
+- Form Validation
+- Success & Error Notifications
+- Crop Database Management
+
+---
+
+## 📊 Dashboard Features
+
+- Dashboard Statistics
+- Total Users Counter
+- Total Crops Counter
+- Protected Dashboard
+- Real-time API Integration
 
 ---
 
@@ -61,10 +96,22 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes?node-id=0-
 
 ---
 
+## 🌿 Agricultural Features
+
+- AI Crop Advisory
+- Crop Information Management
+- Pest Detection
+- Market Prices
+- Smart Farming Dashboard
+- Agriculture Recommendations
+
+---
+
 ## 💻 Frontend Features
 
 - Responsive Design
 - Dashboard
+- Crop CRUD Interface
 - Modern UI
 - Mobile Friendly
 - Dark Mode Support
@@ -73,6 +120,10 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes?node-id=0-
 - AI Response Display
 - Loading Spinner
 - Error Messages
+- Responsive Navigation
+- Reusable Components
+- Empty State UI
+- Form Validation
 
 ---
 
@@ -83,6 +134,7 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes?node-id=0-
 - Next.js
 - React.js
 - Tailwind CSS
+- JavaScript (ES6+)
 
 ---
 
@@ -98,7 +150,7 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes?node-id=0-
 ## Database
 
 - MongoDB Atlas
-- Mongoose
+- Mongoose ODM
 
 ---
 
@@ -117,6 +169,7 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes?node-id=0-
 - express-rate-limit
 - CORS
 - Environment Variables
+- Protected Routes
 
 ---
 
@@ -129,6 +182,7 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes?node-id=0-
 - Thunder Client
 - Google AI Studio
 - Google Cloud Console
+- Chrome DevTools
 
 ---
 
@@ -141,7 +195,23 @@ AI-Powered-Crop-Advisory-Chatbot-Prototype-
 ├── front-end/
 │
 │   ├── app/
+│   │   ├── about/
+│   │   ├── ai_features/
+│   │   ├── dashboard/
+│   │   ├── detail_listview/
+│   │   ├── login/
+│   │   ├── market_prices/
+│   │   ├── pest_detection/
+│   │   ├── profile/
+│   │   ├── showcase/
+│   │   └── signup/
+│   │
 │   ├── components/
+│   │   ├── ui/
+│   │   ├── Hero.jsx
+│   │   ├── Navbar.jsx
+│   │   └── Footer.jsx
+│   │
 │   ├── public/
 │   ├── package.json
 │   └── ...
@@ -150,12 +220,24 @@ AI-Powered-Crop-Advisory-Chatbot-Prototype-
 │
 │   ├── config/
 │   ├── controllers/
-│   │      └── aiController.js
+│   │   ├── aiController.js
+│   │   ├── cropController.js
+│   │   ├── dashboardController.js
+│   │   ├── marketController.js
+│   │   └── userController.js
 │   │
 │   ├── middleware/
 │   ├── models/
+│   │   ├── Crop.js
+│   │   └── User.js
+│   │
 │   ├── routes/
-│   │      └── aiRoutes.js
+│   │   ├── aiRoutes.js
+│   │   ├── cropRoutes.js
+│   │   ├── dashboardRoutes.js
+│   │   ├── marketRoutes.js
+│   │   ├── pestRoutes.js
+│   │   └── userRoutes.js
 │   │
 │   ├── server.js
 │   ├── package.json
@@ -171,16 +253,30 @@ AI-Powered-Crop-Advisory-Chatbot-Prototype-
 ```
 
 ---
-
 # Database
 
-This project uses **MongoDB Atlas** with **Mongoose ODM**.
+This project uses **MongoDB Atlas** with **Mongoose ODM** for secure and scalable data storage.
+
+---
 
 ## User Model
 
 - Name
 - Email
 - Password (Encrypted)
+- CreatedAt
+- UpdatedAt
+
+---
+
+## Crop Model
+
+- Crop Name
+- Season
+- Soil Type
+- Fertilizer
+- Water Requirement
+- Expected Yield
 - CreatedAt
 - UpdatedAt
 
@@ -196,15 +292,17 @@ This project uses **MongoDB Atlas** with **Mongoose ODM**.
 
 | Route | Description |
 |--------|-------------|
-| / | Home |
-| /about | About |
-| /login | Login |
-| /signup | Register |
+| / | Home Page |
+| /about | About Page |
+| /login | User Login |
+| /signup | User Registration |
 | /dashboard | Protected Dashboard |
-| /ai_features | AI Features |
-| /market_prices | Market Prices |
-| /detail_listview | Weather Details |
-| /showcase | Component Showcase |
+| /ai_features | AI Crop Advisory |
+| /detail_listview | Crop Information Management |
+| /market_prices | Market Price Information |
+| /pest_detection | Pest Detection |
+| /profile | User Profile |
+| /showcase | UI Components Showcase |
 
 ---
 
@@ -216,8 +314,8 @@ This project uses **MongoDB Atlas** with **Mongoose ODM**.
 |--------|------------------------------|----------------|
 | POST | /api/auth/register | Register User |
 | POST | /api/auth/login | Login User |
-| GET | /api/auth/google | Google Login |
-| GET | /api/auth/google/callback | Google Callback |
+| GET | /api/auth/google | Google OAuth Login |
+| GET | /api/auth/google/callback | Google OAuth Callback |
 
 ---
 
@@ -233,6 +331,25 @@ This project uses **MongoDB Atlas** with **Mongoose ODM**.
 
 ---
 
+## Crop APIs
+
+| Method | Endpoint | Description |
+|--------|-------------------------|----------------|
+| GET | /api/crops | Get All Crops |
+| POST | /api/crops | Create Crop |
+| PUT | /api/crops/:id | Update Crop |
+| DELETE | /api/crops/:id | Delete Crop |
+
+---
+
+## Dashboard APIs
+
+| Method | Endpoint | Description |
+|--------|---------------------|----------------|
+| GET | /api/dashboard | Dashboard Statistics |
+
+---
+
 ## AI APIs
 
 | Method | Endpoint | Description |
@@ -240,43 +357,313 @@ This project uses **MongoDB Atlas** with **Mongoose ODM**.
 | POST | /api/ai/generate | Generate AI Crop Advisory |
 
 ---
+
+## Market APIs
+
+| Method | Endpoint | Description |
+|--------|----------------------|----------------|
+| GET | /api/market | Get Market Prices |
+
+---
+
+## Pest Detection APIs
+
+| Method | Endpoint | Description |
+|--------|----------------------|----------------|
+| GET | /api/pest | Pest Detection Information |
+
+---
+
 # Authentication Flow
 
 1. User registers using Email and Password.
 2. Password is securely hashed using **bcrypt** before storing in MongoDB.
 3. User logs in using valid credentials.
-4. The server verifies the credentials and generates a **JWT Token**.
-5. The JWT Token is stored in the browser's Local Storage.
-6. Protected routes require a valid Authorization Token.
-7. Users can also authenticate using **Google OAuth**.
-8. Logout removes the stored token and redirects users to the login page.
+4. The server verifies the credentials.
+5. A **JWT Token** is generated.
+6. The token is stored in Local Storage.
+7. Protected routes verify the token before allowing access.
+8. Users can also authenticate using **Google OAuth**.
+9. Logout removes the stored token and redirects the user to the Login page.
+
+---
+
+# Dashboard Workflow
+
+1. User logs in successfully.
+2. Frontend requests dashboard statistics.
+3. Backend fetches data from MongoDB.
+4. Dashboard displays:
+
+- Total Users
+- Total Crops
+- Dashboard Cards
+
+5. Statistics update automatically whenever data changes.
 
 ---
 
 # AI Feature Workflow
 
-1. User navigates to the **AI Features** page.
+1. User opens the **AI Features** page.
 2. User enters an agriculture-related question.
 3. Frontend sends a **POST** request to:
 
-```
+```text
 /api/ai/generate
 ```
 
-4. Backend receives the prompt.
+4. Backend validates the request.
 5. The backend securely communicates with **Google Gemini AI**.
 6. Gemini generates an intelligent farming recommendation.
-7. Backend returns the generated response.
-8. Frontend displays the AI response.
-9. Loading and error states provide a better user experience.
+7. Backend sends the AI response.
+8. Frontend displays:
+
+- Loading State
+- AI Recommendation
+- Error Messages (if any)
 
 ---
+
+# Crop CRUD Workflow
+
+## Create Crop
+
+User fills the crop form
+
+↓
+
+POST `/api/crops`
+
+↓
+
+Crop stored in MongoDB
+
+↓
+
+Crop cards refresh automatically
+
+---
+
+## Read Crops
+
+GET `/api/crops`
+
+↓
+
+Retrieve all crop records
+
+↓
+
+Display crop cards
+
+---
+
+## Update Crop
+
+Click **Edit**
+
+↓
+
+Modify crop details
+
+↓
+
+PUT `/api/crops/:id`
+
+↓
+
+Database updated
+
+↓
+
+UI refreshed automatically
+
+---
+
+## Delete Crop
+
+Click **Delete**
+
+↓
+
+Confirmation dialog
+
+↓
+
+DELETE `/api/crops/:id`
+
+↓
+
+Crop removed
+
+↓
+
+Cards refresh automatically
+
+---
+
+# Application Workflow
+
+User Login
+
+↓
+
+Dashboard
+
+↓
+
+Select Feature
+
+↓
+
+AI Crop Advisory
+
+or
+
+Crop Management
+
+or
+
+Market Prices
+
+or
+
+Pest Detection
+
+↓
+
+Backend API
+
+↓
+
+MongoDB / Gemini AI
+
+↓
+
+Frontend Response
+
+---
+# Database
+
+The application uses **MongoDB Atlas** with **Mongoose ODM** for storing user accounts, crop records, market prices, and dashboard data.
+
+## Collections
+
+### Users
+
+- Name
+- Email
+- Password (Encrypted)
+- Created At
+- Updated At
+
+### Crops
+
+- Crop Name
+- Season
+- Soil Type
+- Fertilizer
+- Water Requirement
+- Expected Yield
+
+### Dashboard
+
+- User Statistics
+- Crop Statistics
+- Activity Summary
+
+### Market Prices
+
+- Crop Name
+- Market
+- Price
+- Last Updated
+
+---
+
+## Database Schema
+
+![Database Schema](Docs/W5_SchemaDiagram_TBI-26100998.png)
+
+# Frontend Routes
+
+| Route | Description |
+|--------|-------------|
+| / | Home Page |
+| /about | About Project |
+| /login | User Login |
+| /signup | User Registration |
+| /dashboard | Protected Dashboard |
+| /detail_listview | Crop Management (CRUD) |
+| /market_prices | Market Price Dashboard |
+| /ai_features | AI Crop Advisory |
+| /pest_detection | Pest Detection |
+| /profile | User Profile |
+| /showcase | UI Component Showcase |
+
+# Backend REST APIs
+
+## Authentication
+
+| Method | Endpoint | Description |
+|--------|------------------------------|----------------|
+| POST | /api/auth/register | Register User |
+| POST | /api/auth/login | Login User |
+| GET | /api/auth/google | Google OAuth Login |
+| GET | /api/auth/google/callback | Google OAuth Callback |
+
+---
+
+## Dashboard APIs
+
+| Method | Endpoint | Description |
+|--------|-----------------------------|----------------|
+| GET | /api/dashboard/stats | Dashboard Statistics |
+
+---
+
+## Crop APIs
+
+| Method | Endpoint | Description |
+|--------|----------------------------|----------------|
+| GET | /api/crops | Get All Crops |
+| POST | /api/crops | Add Crop |
+| PUT | /api/crops/:id | Update Crop |
+| DELETE | /api/crops/:id | Delete Crop |
+
+---
+
+## Market APIs
+
+| Method | Endpoint | Description |
+|--------|------------------------------|----------------|
+| GET | /api/market | Get Market Prices |
+
+---
+
+## AI APIs
+
+| Method | Endpoint | Description |
+|--------|--------------------------|------------------------------|
+| POST | /api/ai/generate | Generate AI Crop Advice |
+
+---
+
+## User APIs
+
+| Method | Endpoint | Description |
+|--------|---------------------------|----------------|
+| GET | /api/users | Get Users |
+| GET | /api/users/:id | Get User |
+| PUT | /api/users/:id | Update User |
+| DELETE | /api/users/:id | Delete User |
 
 # Security Features
 
 - JWT Authentication
 - Google OAuth 2.0
-- Password Hashing (bcrypt)
+- Password Hashing using bcrypt
 - Protected Routes
 - Express Validator
 - Express Rate Limiting
@@ -293,12 +680,12 @@ This project uses **MongoDB Atlas** with **Mongoose ODM**.
 ## Clone Repository
 
 ```bash
-git clone https://github.com/harshavennapu/AI-Powered-Crop-Advisory-Chatbot-Prototype-
+git clone https://github.com/harshavennapu/AI-Powered-Crop-Advisory-Chatbot-Prototype-.git
 ```
 
 ---
 
-# Frontend Setup
+## Frontend Setup
 
 ```bash
 cd front-end
@@ -306,7 +693,7 @@ npm install
 npm run dev
 ```
 
-Frontend URL
+Frontend runs on
 
 ```
 http://localhost:3000
@@ -314,7 +701,7 @@ http://localhost:3000
 
 ---
 
-# Backend Setup
+## Backend Setup
 
 ```bash
 cd back-end
@@ -322,7 +709,7 @@ npm install
 npm run dev
 ```
 
-Backend URL
+Backend runs on
 
 ```
 http://localhost:5000
@@ -332,120 +719,108 @@ http://localhost:5000
 
 # Environment Variables
 
-Create a `.env` file inside the **back-end** directory.
+Create a `.env` file inside the **back-end** folder.
 
 ```env
 PORT=5000
 
 MONGODB_URI=your_mongodb_connection_string
 
-JWT_SECRET=your_jwt_secret
+JWT_SECRET=your_secret_key
 
 GOOGLE_CLIENT_ID=your_google_client_id
 
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 
-GEMINI_API_KEY=your_google_gemini_api_key
+GEMINI_API_KEY=your_gemini_api_key
 ```
 
-> **Note:** Never commit your `.env` file or API keys to GitHub. Only commit a `.env.example` file if needed.
+> Never commit your `.env` file to GitHub.
 
 ---
 
 # API Testing
 
-The REST APIs were tested using:
+The backend APIs were tested using:
 
 - Postman
+- Browser Network Tab
 - Thunder Client
 
-### Authentication APIs
+## Authentication
 
 - Register User
 - Login User
 - Google OAuth Login
 
-### User APIs
+## Dashboard
 
-- Get All Users
-- Get User By ID
-- Update User
-- Delete User
-- Search User
+- Dashboard Statistics
 
-### AI APIs
+## Crop APIs
 
-- Generate AI Crop Advisory
-- Prompt Validation
-- AI Response Generation
-- Error Response Handling
+- Create Crop
+- Read Crop
+- Update Crop
+- Delete Crop
 
-### API Verification
+## AI APIs
+
+- Generate Crop Advisory
+
+## Verification
 
 - HTTP Status Codes
-- JWT Authorization
 - Protected Routes
-- AI Response Testing
-- Browser Network Verification (200 OK)
+- JWT Authentication
+- Browser Network Requests (200 OK)
 
 ---
 
 # Error Handling
 
-The backend includes:
+The application includes
 
 - Global Error Handler
-- Express Validator
-- JWT Middleware
-- Rate Limiter
-- Proper HTTP Status Codes
-- Invalid Route Handler
-- JSON Error Responses
-- AI API Error Handling
-- Loading State Handling
-- User-friendly Error Messages
+- Loading States
+- Empty States
+- Validation Errors
+- API Error Responses
+- Invalid Route Handling
+- Friendly Error Messages
 
 ---
 
 # Prompt Engineering
 
-The project includes a dedicated **PROMPTS.md** file documenting:
+The project contains a dedicated
 
-- Three prompt variations
-- Example input and output
-- Best performing prompt
-- System prompt used
-- Prompt engineering observations
+```
+PROMPTS.md
+```
 
----
-# Week 7 Deliverables
+which documents
 
-## ✅ Deliverable 1 – AI Feature Integration
-
-Successfully integrated **Google Gemini AI** into the Agro AI application.
-
-Implemented features include:
-
-- Google Gemini AI integration
-- Secure API key management using `.env`
-- AI Crop Advisory endpoint
-- Frontend to Backend API communication
-- Loading state while generating responses
-- User-friendly error handling
-- AI-generated farming recommendations
+- Prompt Variations
+- Sample Inputs
+- Sample Outputs
+- Best Prompt Selection
+- Prompt Engineering Observations
 
 ---
 
-## ✅ Deliverable 2 – AI Feature Demonstration
+# Week 7 Deliverables ✅
 
-Successfully completed and documented:
+### AI Feature Integration
 
-- User Input Screen
-- Loading State
-- AI Response Screen
-- Browser Network Request (`POST /api/ai/generate` → **200 OK**)
+- Google Gemini AI Integration
+- Prompt Input UI
+- AI Loading State
+- AI Response Display
+- Error Handling
+- Secure API Key Storage
 
-Documentation available in:
+Documentation
 
 ```
 Docs/W7_AIFeatureDemo_TBI-26100998.pdf
@@ -453,121 +828,152 @@ Docs/W7_AIFeatureDemo_TBI-26100998.pdf
 
 ---
 
-## ✅ Deliverable 3 – Prompt Engineering
+# Week 8 Deliverables ✅
 
-Created:
+## Deliverable 1 — Fully Connected Frontend
 
-```
-PROMPTS.md
-```
+Completed
 
-Includes:
-
-- Three prompt variations
-- Example inputs
-- Example outputs
-- Best prompt analysis
-- System prompt used
+- Connected Dashboard with Backend API
+- Protected Dashboard using JWT Authentication
+- Complete Crop CRUD Operations
+- AI Feature connected to Backend
+- Responsive UI (375px, 768px, 1440px)
+- Loading States
+- Empty States
+- Error Handling
+- Zero Mock Data
+- Real API Integration
 
 ---
 
-## ✅ Deliverable 4 – Peer Code Review
+## Deliverable 2 — Frontend Completion PDF
 
-Reviewed two classmates' GitHub repositories by providing:
+Completed
 
-- Architectural observations
-- Code improvement suggestions
-- Technical questions
+Documentation
+
+```
+Docs/W8_FrontendCompletion_TBI-26100998.pdf
+```
+
+Includes
+
+- Authenticated Dashboard
+- Create Crop
+- Update Crop
+- Delete Crop
+- AI Feature
+- Responsive Views
+- Empty State
+- Network Verification
+
+---
+
+## Deliverable 3 — Network Verification
+
+Completed
+
+Verified successful API requests
+
+- Dashboard API
+- Crop API
+- AI API
+
+Status
+
+```
+200 OK
+```
 
 ---
 
 # Current Status
 
-## ✅ Completed
+## Frontend
 
-### Frontend
-
-- Responsive UI
+- Responsive Home Page
+- Responsive Navigation
 - Dashboard
-- Login & Registration
-- AI Features Page
-- Protected Routes
-- Loading State
-- Error Messages
+- Authentication
+- Crop CRUD
+- AI Feature
+- Profile Page
+- Market Prices
+- Pest Detection
+- Component Showcase
+- Dark Mode
+- Empty States
+- Loading States
 
-### Backend
+---
+
+## Backend
 
 - REST APIs
 - JWT Authentication
 - Google OAuth
-- MongoDB Atlas Integration
-- CRUD Operations
-- Google Gemini AI Integration
-- AI Crop Advisory Endpoint
-- Input Validation
-- Global Error Handling
+- MongoDB Atlas
+- Crop CRUD APIs
+- Dashboard APIs
+- AI APIs
+- Validation
+- Error Handling
 
-### Security
+---
 
-- JWT Authentication
-- Password Hashing
-- Google OAuth
-- Express Validator
-- Rate Limiting
-- CORS
-- Environment Variables
+## Database
 
-### Documentation
+- MongoDB Atlas
+- Mongoose ODM
+- Users Collection
+- Crops Collection
 
-- README.md
-- PROMPTS.md
-- Database Schema
+---
+
+## Documentation
+
+- README
+- PROMPTS
 - Postman Collection
-- Week Deliverables
+- Database Schema
+- Week 2 PDF
+- Week 3 PDF
+- Week 4 PDF
+- Week 5 PDF
+- Week 6 PDF
+- Week 7 PDF
+- Week 8 PDF
 
 ---
 
 # Future Enhancements
 
-Planned improvements include:
-
-- Voice-based AI Chatbot
-- Image-based Crop Disease Detection
 - Weather API Integration
+- Image-based Disease Detection
+- Voice-enabled AI Assistant
 - Farmer Profiles
 - Chat History
-- AI Conversation History
-- Multiple AI Prompt Modes
-- AI Response Download
-- PDF Report Generation
 - Email Verification
 - Forgot Password
 - Refresh Tokens
 - Role-Based Access Control
 - Multi-language Support
-- Offline Mode
 - Mobile Application
 
 ---
 
 # Screenshots
 
-## AI Crop Advisory
+Project documentation is available in the **Docs** folder.
 
-```
-Docs/W7_AIFeatureDemo_TBI-26100998.pdf
-```
-
-   
-
-Recommended screenshots:
-
-- Home Page
-- Login Page
-- Dashboard
-- AI Features Page
-- AI Generated Response
-- Network Request (200 OK)
+- W2 Frontend Screenshots
+- W3 Responsive UI
+- W4 Frontend-Backend Connection
+- W5 CRUD Verification
+- W6 Authentication Flow
+- W7 AI Feature Demo
+- W8 Frontend Completion
 
 ---
 
@@ -575,10 +981,8 @@ Recommended screenshots:
 
 Contributions are welcome.
 
-To contribute:
-
 1. Fork the repository.
-2. Create a new feature branch.
+2. Create a new branch.
 3. Commit your changes.
 4. Push the branch.
 5. Open a Pull Request.
@@ -589,27 +993,26 @@ To contribute:
 
 ## Vennapu Sree Sai Chandra Harsha
 
-**M.Tech – Artificial Intelligence & Machine Learning**
+M.Tech – Artificial Intelligence & Machine Learning
 
-**TBI-GEU Summer Internship Program 2026**
+TBI-GEU Summer Internship Program 2026
 
-GitHub:
+GitHub
+
 https://github.com/harshavennapu
-
 
 ---
 
 # Acknowledgements
 
-Special thanks to:
-
-- TBI-GEU Summer Internship Program
+- Technology Business Incubator (TBI-GEU)
 - Google Gemini AI
 - MongoDB Atlas
 - Next.js
+- React
 - Express.js
-- React.js
-- Open Source Community
+- Node.js
+- Tailwind CSS
 
 ---
 
@@ -617,26 +1020,29 @@ Special thanks to:
 
 This project was developed as part of the **TBI-GEU Summer Internship Program 2026** for educational and learning purposes.
 
-It is intended for academic, research, and demonstration purposes only.
-
 ---
 
 # ⭐ Project Status
 
-**Week 1** ✅ Project Setup
+✅ Week 1 — Project Setup
 
-**Week 2** ✅ UI Development
+✅ Week 2 — Frontend Development
 
-**Week 3** ✅ Responsive Frontend
+✅ Week 3 — Responsive UI
 
-**Week 4** ✅ Frontend-Backend Integration
+✅ Week 4 — Frontend & Backend Integration
 
-**Week 5** ✅ Database Integration (MongoDB Atlas)
+✅ Week 5 — MongoDB CRUD Operations
 
-**Week 6** ✅ Authentication System (JWT + Google OAuth)
+✅ Week 6 — JWT Authentication & Google OAuth
 
-**Week 7** ✅ Google Gemini AI Integration & Crop Advisory Feature
+✅ Week 7 — AI Crop Advisory using Google Gemini
+
+✅ Week 8 — Frontend Completion, Dashboard Integration & Responsive CRUD
 
 ---
 
-If you found this project useful, consider giving it a ⭐ on GitHub!
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+
+
