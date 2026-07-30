@@ -71,11 +71,14 @@ router.get(
       }
     );
 
-    res.redirect(
-      `http://localhost:3000/login?token=${token}&name=${encodeURIComponent(
-        req.user.name
-      )}&email=${encodeURIComponent(req.user.email)}`
-    );
+     const CLIENT_URL =
+  process.env.CLIENT_URL || "http://localhost:3000";
+
+res.redirect(
+  `${CLIENT_URL}/login?token=${token}&name=${encodeURIComponent(
+    req.user.name
+  )}&email=${encodeURIComponent(req.user.email)}`
+);
   }
 );
 module.exports = router;
