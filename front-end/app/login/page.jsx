@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
@@ -9,7 +9,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -17,7 +17,6 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Handle Google OAuth callback
   useEffect(() => {
     const token = searchParams.get("token");
     const name = searchParams.get("name");
@@ -25,7 +24,6 @@ export default function LoginPage() {
 
     if (token) {
       localStorage.setItem("token", token);
-
       localStorage.setItem(
         "user",
         JSON.stringify({
@@ -39,7 +37,6 @@ export default function LoginPage() {
     }
   }, [searchParams, router]);
 
-  // Email & Password Login
   const handleLogin = async () => {
     if (!email || !password) {
       alert("Please enter email and password.");
@@ -56,10 +53,7 @@ export default function LoginPage() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            email,
-            password,
-          }),
+          body: JSON.stringify({ email, password }),
         },
       );
 
@@ -71,12 +65,10 @@ export default function LoginPage() {
         return;
       }
 
-      // Save JWT Token
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
 
       alert("Login Successful!");
-
       router.push("/dashboard");
     } catch (error) {
       console.error(error);
@@ -86,7 +78,6 @@ export default function LoginPage() {
     setLoading(false);
   };
 
-  // Google Login
   const handleGoogleLogin = () => {
     window.location.href =
       "https://ai-powered-crop-advisory-chatbot.onrender.com/api/auth/google";
@@ -98,7 +89,6 @@ export default function LoginPage() {
 
       <main className="flex flex-1 items-center justify-center px-4 py-12">
         <div className="w-full max-w-md rounded-3xl bg-white p-8 shadow-2xl">
-          {/* Logo */}
           <div className="mb-6 flex justify-center">
             <Image
               src="/logo1.png"
@@ -109,7 +99,6 @@ export default function LoginPage() {
             />
           </div>
 
-          {/* Heading */}
           <h1 className="text-center text-3xl font-bold text-green-700">
             Welcome Back
           </h1>
@@ -118,7 +107,6 @@ export default function LoginPage() {
             Login to continue to AgroAI
           </p>
 
-          {/* Email */}
           <div className="mb-5">
             <label className="mb-2 block font-medium text-gray-700">
               Email
@@ -129,11 +117,10 @@ export default function LoginPage() {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-xl border border-gray-300 p-3 outline-none transition focus:border-green-600"
+              className="w-full rounded-xl border border-gray-300 p-3 outline-none focus:border-green-600"
             />
           </div>
 
-          {/* Password */}
           <div className="mb-6">
             <label className="mb-2 block font-medium text-gray-700">
               Password
@@ -144,36 +131,32 @@ export default function LoginPage() {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-xl border border-gray-300 p-3 outline-none transition focus:border-green-600"
+              className="w-full rounded-xl border border-gray-300 p-3 outline-none focus:border-green-600"
             />
           </div>
 
-          {/* Login Button */}
           <button
             onClick={handleLogin}
             disabled={loading}
-            className="w-full rounded-xl bg-green-600 py-3 text-lg font-semibold text-white transition hover:bg-green-700"
+            className="w-full rounded-xl bg-green-600 py-3 text-lg font-semibold text-white hover:bg-green-700"
           >
             {loading ? "Logging In..." : "Login"}
           </button>
 
-          {/* Divider */}
           <div className="my-6 flex items-center">
             <div className="h-px flex-1 bg-gray-300"></div>
             <span className="mx-3 text-gray-500">OR</span>
             <div className="h-px flex-1 bg-gray-300"></div>
           </div>
 
-          {/* Google Login */}
           <button
             onClick={handleGoogleLogin}
-            className="w-full flex items-center justify-center gap-3 rounded-xl border-2 border-yellow-400 bg-yellow-50 py-3 text-lg font-semibold text-green-900 transition duration-300 hover:bg-yellow-100 hover:border-yellow-500"
+            className="flex w-full items-center justify-center gap-3 rounded-xl border-2 border-yellow-400 bg-yellow-50 py-3 text-lg font-semibold text-green-900 hover:border-yellow-500 hover:bg-yellow-100"
           >
             <FcGoogle size={24} />
             Sign in with Google
           </button>
 
-          {/* Signup */}
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               Don't have an account?{" "}
@@ -190,5 +173,13 @@ export default function LoginPage() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LoginContent />
+    </Suspense>
   );
 }
