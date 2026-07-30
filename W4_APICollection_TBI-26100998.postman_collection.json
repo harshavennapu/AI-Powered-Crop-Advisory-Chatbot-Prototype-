@@ -25,7 +25,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:5000/api/auth/register",
+              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/auth/register",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -55,7 +55,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:5000/api/auth/login",
+              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/auth/login",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -81,7 +81,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:5000/api/users",
+              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -101,7 +101,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:5000/api/users/6a40c4c8f86459ba42659036",
+              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users/6a40c4c8f86459ba42659036",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -131,7 +131,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:5000/api/users/6a40c4c8f86459ba42659036",
+              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users/6a40c4c8f86459ba42659036",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -152,7 +152,7 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:5000/api/users/6a40c4c8f86459ba42659036",
+              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users/6a40c4c8f86459ba42659036",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -178,7 +178,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:5000/api/users/search?name=harsha",
+              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users/search?name=harsha",
               "protocol": "http",
               "host": [
                 "localhost"

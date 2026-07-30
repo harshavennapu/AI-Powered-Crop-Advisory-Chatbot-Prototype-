@@ -253,6 +253,7 @@ AI-Powered-Crop-Advisory-Chatbot-Prototype-
 ```
 
 ---
+
 # Database
 
 This project uses **MongoDB Atlas** with **Mongoose ODM** for secure and scalable data storage.
@@ -290,19 +291,19 @@ This project uses **MongoDB Atlas** with **Mongoose ODM** for secure and scalabl
 
 # Frontend Routes
 
-| Route | Description |
-|--------|-------------|
-| / | Home Page |
-| /about | About Page |
-| /login | User Login |
-| /signup | User Registration |
-| /dashboard | Protected Dashboard |
-| /ai_features | AI Crop Advisory |
+| Route            | Description                 |
+| ---------------- | --------------------------- |
+| /                | Home Page                   |
+| /about           | About Page                  |
+| /login           | User Login                  |
+| /signup          | User Registration           |
+| /dashboard       | Protected Dashboard         |
+| /ai_features     | AI Crop Advisory            |
 | /detail_listview | Crop Information Management |
-| /market_prices | Market Price Information |
-| /pest_detection | Pest Detection |
-| /profile | User Profile |
-| /showcase | UI Components Showcase |
+| /market_prices   | Market Price Information    |
+| /pest_detection  | Pest Detection              |
+| /profile         | User Profile                |
+| /showcase        | UI Components Showcase      |
 
 ---
 
@@ -310,67 +311,67 @@ This project uses **MongoDB Atlas** with **Mongoose ODM** for secure and scalabl
 
 ## Authentication APIs
 
-| Method | Endpoint | Description |
-|--------|------------------------------|----------------|
-| POST | /api/auth/register | Register User |
-| POST | /api/auth/login | Login User |
-| GET | /api/auth/google | Google OAuth Login |
-| GET | /api/auth/google/callback | Google OAuth Callback |
+| Method | Endpoint                  | Description           |
+| ------ | ------------------------- | --------------------- |
+| POST   | /api/auth/register        | Register User         |
+| POST   | /api/auth/login           | Login User            |
+| GET    | /api/auth/google          | Google OAuth Login    |
+| GET    | /api/auth/google/callback | Google OAuth Callback |
 
 ---
 
 ## User APIs
 
-| Method | Endpoint | Description |
-|--------|-------------------------|----------------|
-| GET | /api/users | Get All Users |
-| GET | /api/users/:id | Get User By ID |
-| PUT | /api/users/:id | Update User |
-| DELETE | /api/users/:id | Delete User |
-| GET | /api/users/search | Search Users |
+| Method | Endpoint          | Description    |
+| ------ | ----------------- | -------------- |
+| GET    | /api/users        | Get All Users  |
+| GET    | /api/users/:id    | Get User By ID |
+| PUT    | /api/users/:id    | Update User    |
+| DELETE | /api/users/:id    | Delete User    |
+| GET    | /api/users/search | Search Users   |
 
 ---
 
 ## Crop APIs
 
-| Method | Endpoint | Description |
-|--------|-------------------------|----------------|
-| GET | /api/crops | Get All Crops |
-| POST | /api/crops | Create Crop |
-| PUT | /api/crops/:id | Update Crop |
-| DELETE | /api/crops/:id | Delete Crop |
+| Method | Endpoint       | Description   |
+| ------ | -------------- | ------------- |
+| GET    | /api/crops     | Get All Crops |
+| POST   | /api/crops     | Create Crop   |
+| PUT    | /api/crops/:id | Update Crop   |
+| DELETE | /api/crops/:id | Delete Crop   |
 
 ---
 
 ## Dashboard APIs
 
-| Method | Endpoint | Description |
-|--------|---------------------|----------------|
-| GET | /api/dashboard | Dashboard Statistics |
+| Method | Endpoint       | Description          |
+| ------ | -------------- | -------------------- |
+| GET    | /api/dashboard | Dashboard Statistics |
 
 ---
 
 ## AI APIs
 
-| Method | Endpoint | Description |
-|--------|----------------------|--------------------------------|
-| POST | /api/ai/generate | Generate AI Crop Advisory |
+| Method | Endpoint         | Description               |
+| ------ | ---------------- | ------------------------- |
+| POST   | /api/ai/generate | Generate AI Crop Advisory |
 
 ---
 
 ## Market APIs
 
-| Method | Endpoint | Description |
-|--------|----------------------|----------------|
-| GET | /api/market | Get Market Prices |
+| Method | Endpoint    | Description       |
+| ------ | ----------- | ----------------- |
+| GET    | /api/market | Get Market Prices |
 
 ---
 
 ## Pest Detection APIs
 
-| Method | Endpoint | Description |
-|--------|----------------------|----------------|
-| GET | /api/pest | Pest Detection Information |
+| Method | Endpoint  | Description                |
+| ------ | --------- | -------------------------- |
+| GET    | /api/pest | Pest Detection Information |
 
 ---
 
@@ -544,6 +545,7 @@ MongoDB / Gemini AI
 Frontend Response
 
 ---
+
 # Database
 
 The application uses **MongoDB Atlas** with **Mongoose ODM** for storing user accounts, crop records, market prices, and dashboard data.
@@ -588,75 +590,75 @@ The application uses **MongoDB Atlas** with **Mongoose ODM** for storing user ac
 
 # Frontend Routes
 
-| Route | Description |
-|--------|-------------|
-| / | Home Page |
-| /about | About Project |
-| /login | User Login |
-| /signup | User Registration |
-| /dashboard | Protected Dashboard |
+| Route            | Description            |
+| ---------------- | ---------------------- |
+| /                | Home Page              |
+| /about           | About Project          |
+| /login           | User Login             |
+| /signup          | User Registration      |
+| /dashboard       | Protected Dashboard    |
 | /detail_listview | Crop Management (CRUD) |
-| /market_prices | Market Price Dashboard |
-| /ai_features | AI Crop Advisory |
-| /pest_detection | Pest Detection |
-| /profile | User Profile |
-| /showcase | UI Component Showcase |
+| /market_prices   | Market Price Dashboard |
+| /ai_features     | AI Crop Advisory       |
+| /pest_detection  | Pest Detection         |
+| /profile         | User Profile           |
+| /showcase        | UI Component Showcase  |
 
 # Backend REST APIs
 
 ## Authentication
 
-| Method | Endpoint | Description |
-|--------|------------------------------|----------------|
-| POST | /api/auth/register | Register User |
-| POST | /api/auth/login | Login User |
-| GET | /api/auth/google | Google OAuth Login |
-| GET | /api/auth/google/callback | Google OAuth Callback |
+| Method | Endpoint                  | Description           |
+| ------ | ------------------------- | --------------------- |
+| POST   | /api/auth/register        | Register User         |
+| POST   | /api/auth/login           | Login User            |
+| GET    | /api/auth/google          | Google OAuth Login    |
+| GET    | /api/auth/google/callback | Google OAuth Callback |
 
 ---
 
 ## Dashboard APIs
 
-| Method | Endpoint | Description |
-|--------|-----------------------------|----------------|
-| GET | /api/dashboard/stats | Dashboard Statistics |
+| Method | Endpoint             | Description          |
+| ------ | -------------------- | -------------------- |
+| GET    | /api/dashboard/stats | Dashboard Statistics |
 
 ---
 
 ## Crop APIs
 
-| Method | Endpoint | Description |
-|--------|----------------------------|----------------|
-| GET | /api/crops | Get All Crops |
-| POST | /api/crops | Add Crop |
-| PUT | /api/crops/:id | Update Crop |
-| DELETE | /api/crops/:id | Delete Crop |
+| Method | Endpoint       | Description   |
+| ------ | -------------- | ------------- |
+| GET    | /api/crops     | Get All Crops |
+| POST   | /api/crops     | Add Crop      |
+| PUT    | /api/crops/:id | Update Crop   |
+| DELETE | /api/crops/:id | Delete Crop   |
 
 ---
 
 ## Market APIs
 
-| Method | Endpoint | Description |
-|--------|------------------------------|----------------|
-| GET | /api/market | Get Market Prices |
+| Method | Endpoint    | Description       |
+| ------ | ----------- | ----------------- |
+| GET    | /api/market | Get Market Prices |
 
 ---
 
 ## AI APIs
 
-| Method | Endpoint | Description |
-|--------|--------------------------|------------------------------|
-| POST | /api/ai/generate | Generate AI Crop Advice |
+| Method | Endpoint         | Description             |
+| ------ | ---------------- | ----------------------- |
+| POST   | /api/ai/generate | Generate AI Crop Advice |
 
 ---
 
 ## User APIs
 
-| Method | Endpoint | Description |
-|--------|---------------------------|----------------|
-| GET | /api/users | Get Users |
-| GET | /api/users/:id | Get User |
-| PUT | /api/users/:id | Update User |
+| Method | Endpoint       | Description |
+| ------ | -------------- | ----------- |
+| GET    | /api/users     | Get Users   |
+| GET    | /api/users/:id | Get User    |
+| PUT    | /api/users/:id | Update User |
 | DELETE | /api/users/:id | Delete User |
 
 # Security Features
@@ -712,7 +714,7 @@ npm run dev
 Backend runs on
 
 ```
-http://localhost:5000
+https://ai-powered-crop-advisory-chatbot.onrender.com
 ```
 
 ---
@@ -1043,6 +1045,3 @@ This project was developed as part of the **TBI-GEU Summer Internship Program 20
 ---
 
 If you found this project useful, consider giving it a ⭐ on GitHub.
-
-
-

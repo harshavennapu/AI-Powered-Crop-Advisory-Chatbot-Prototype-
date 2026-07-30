@@ -87,15 +87,18 @@ export default function AIFeaturesPage() {
     setResponse("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/ai/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        "https://ai-powered-crop-advisory-chatbot.onrender.com/api/ai/generate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt,
+          }),
         },
-        body: JSON.stringify({
-          prompt,
-        }),
-      });
+      );
 
       const data = await res.json();
 

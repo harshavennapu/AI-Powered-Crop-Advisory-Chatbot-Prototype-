@@ -17,17 +17,20 @@ export default function SignupPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        "https://ai-powered-crop-advisory-chatbot.onrender.com/api/auth/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            password,
+          }),
         },
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-        }),
-      });
+      );
 
       const data = await res.json();
 
@@ -55,17 +58,9 @@ export default function SignupPage() {
       <Navbar />
 
       <main className="flex flex-1 items-center justify-center px-4 py-12">
-
         <div className="w-full max-w-md rounded-3xl bg-white/10 p-8 shadow-2xl backdrop-blur-xl">
-
           <div className="flex flex-col items-center">
-
-            <Image
-              src="/logo1.png"
-              alt="AgroAI Logo"
-              width={90}
-              height={90}
-            />
+            <Image src="/logo1.png" alt="AgroAI Logo" width={90} height={90} />
 
             <h1 className="mt-4 text-3xl font-bold text-yellow-300">
               Create Account
@@ -74,11 +69,9 @@ export default function SignupPage() {
             <p className="mt-2 text-center text-green-100">
               Join AgroAI and experience smart farming.
             </p>
-
           </div>
 
           <div className="mt-8 space-y-5">
-
             <input
               type="text"
               placeholder="Full Name"
@@ -110,7 +103,6 @@ export default function SignupPage() {
             >
               {loading ? "Creating Account..." : "Sign Up"}
             </button>
-
           </div>
 
           <p className="mt-6 text-center text-green-100">
@@ -122,9 +114,7 @@ export default function SignupPage() {
               Login
             </Link>
           </p>
-
         </div>
-
       </main>
 
       <Footer />

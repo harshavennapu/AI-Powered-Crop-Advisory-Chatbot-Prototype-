@@ -17,7 +17,9 @@ export default function MarketPricesPage() {
   useEffect(() => {
     const fetchMarketPrices = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/market");
+        const res = await fetch(
+          "https://ai-powered-crop-advisory-chatbot.onrender.com/api/market",
+        );
 
         if (!res.ok) {
           throw new Error("Failed to fetch market prices");

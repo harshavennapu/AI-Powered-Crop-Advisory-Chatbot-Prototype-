@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Modal from "@/components/ui/Modal";
 
-const API = "http://localhost:5000/api/crops";
+const API = "https://ai-powered-crop-advisory-chatbot.onrender.com/api/crops";
 const getCropIcon = (name) => {
   switch (name.toLowerCase()) {
     case "rice":
