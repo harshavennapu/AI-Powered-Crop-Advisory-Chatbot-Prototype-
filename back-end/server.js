@@ -28,7 +28,20 @@ connectDB();
 // ======================
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:3000",
+    origin: (origin, callback) => {
+      console.log("Incoming Origin:", origin);
+      console.log("Allowed CLIENT_URL:", process.env.CLIENT_URL);
+
+      if (
+        !origin ||
+        origin === process.env.CLIENT_URL ||
+        origin === "http://localhost:3000"
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS blocked"));
+      }
+    },
     credentials: true,
   })
 );
