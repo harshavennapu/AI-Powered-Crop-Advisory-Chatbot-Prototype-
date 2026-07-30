@@ -201,7 +201,7 @@ export default function AIFeaturesPage() {
           <button
             onClick={generateAIResponse}
             disabled={loading}
-            className="mt-6 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-400 px-8 py-3 font-bold text-green-900 transition hover:scale-105 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-6 rounded-xl bg-linear-to-r from-yellow-400 to-orange-400 px-8 py-3 font-bold text-green-900 transition hover:scale-105 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60"
           >
             {loading ? "🤖 Generating..." : "🚀 Generate AI Response"}
           </button>
