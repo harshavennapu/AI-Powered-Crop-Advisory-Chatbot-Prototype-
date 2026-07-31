@@ -69,7 +69,7 @@ export default function DashboardPage() {
         );
 
         const profileData = await profileRes.json();
-
+        console.log("Profile Response:", profileData);
         if (!profileData.success) {
           localStorage.removeItem("token");
           localStorage.removeItem("user");
