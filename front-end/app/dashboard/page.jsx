@@ -60,7 +60,7 @@ export default function DashboardPage() {
       try {
         // Profile API
         const profileRes = await fetch(
-          "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users/profile",
+          " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/users/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -81,7 +81,7 @@ export default function DashboardPage() {
 
         // Dashboard Stats API
         const statsRes = await fetch(
-          "https://ai-powered-crop-advisory-chatbot.onrender.com/api/dashboard/stats",
+          " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/dashboard/stats",
         );
 
         const statsData = await statsRes.json();

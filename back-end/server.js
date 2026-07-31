@@ -26,20 +26,18 @@ connectDB();
 // ======================
 // Middleware
 // ======================
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://ai-powered-crop-advisory-chatbot-prototype-apbe-i06g5a01u.vercel.app",
+];
+
 app.use(
   cors({
-    origin: (origin, callback) => {
-      console.log("Incoming Origin:", origin);
-      console.log("Allowed CLIENT_URL:", process.env.CLIENT_URL);
-
-      if (
-        !origin ||
-        origin === process.env.CLIENT_URL ||
-        origin === "http://localhost:3000"
-      ) {
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        callback(new Error("CORS blocked"));
+        callback(new Error("Not allowed by CORS"));
       }
     },
     credentials: true,

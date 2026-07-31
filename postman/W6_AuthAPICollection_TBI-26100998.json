@@ -25,7 +25,7 @@
               }
             },
             "url": {
-              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/auth/register",
+              "raw": " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/auth/register",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -73,7 +73,7 @@
               }
             },
             "url": {
-              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/auth/login",
+              "raw": " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/auth/login",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -109,7 +109,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users",
+              "raw": " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/users",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -139,7 +139,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users/6a533e43fdf8b0c14960154e",
+              "raw": " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/users/6a533e43fdf8b0c14960154e",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -179,7 +179,7 @@
               }
             },
             "url": {
-              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users/6a5315e9f13d8667812895b2",
+              "raw": " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/users/6a5315e9f13d8667812895b2",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -210,7 +210,7 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users/6a40c5fdf86459ba42659037",
+              "raw": " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/users/6a40c5fdf86459ba42659037",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -246,7 +246,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users/search?name=HL25",
+              "raw": " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/users/search?name=HL25",
               "protocol": "http",
               "host": [
                 "localhost"

@@ -88,7 +88,7 @@ export default function AIFeaturesPage() {
 
     try {
       const res = await fetch(
-        "https://ai-powered-crop-advisory-chatbot.onrender.com/api/ai/generate",
+        " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/ai/generate",
         {
           method: "POST",
           headers: {

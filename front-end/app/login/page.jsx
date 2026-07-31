@@ -47,7 +47,7 @@ function LoginContent() {
 
     try {
       const res = await fetch(
-        "https://ai-powered-crop-advisory-chatbot.onrender.com/api/auth/login",
+        " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/auth/login",
         {
           method: "POST",
           headers: {
@@ -80,7 +80,7 @@ function LoginContent() {
 
   const handleGoogleLogin = () => {
     window.location.href =
-      "https://ai-powered-crop-advisory-chatbot.onrender.com/api/auth/google";
+      " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/auth/google";
   };
 
   return (

@@ -714,7 +714,7 @@ npm run dev
 Backend runs on
 
 ```
-https://ai-powered-crop-advisory-chatbot.onrender.com
+ =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com
 ```
 
 ---

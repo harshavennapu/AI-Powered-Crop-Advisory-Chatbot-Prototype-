@@ -54,7 +54,7 @@ export default function ProfilePage() {
       setLoading(true);
 
       const res = await fetch(
-        "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users/profile",
+        " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/users/profile",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -100,7 +100,7 @@ export default function ProfilePage() {
       setSaving(true);
 
       const res = await fetch(
-        "https://ai-powered-crop-advisory-chatbot.onrender.com/api/users/profile",
+        " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/users/profile",
         {
           method: "PUT",
           headers: {
