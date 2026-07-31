@@ -60,7 +60,7 @@ export default function DashboardPage() {
       try {
         // Profile API
         const profileRes = await fetch(
-          "https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/users",
+          "https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/users/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ export default function DashboardPage() {
         );
 
         const profileData = await profileRes.json();
-        console.log("Profile Response:", profileData);
+
         if (!profileData.success) {
           localStorage.removeItem("token");
           localStorage.removeItem("user");
