@@ -16,7 +16,7 @@ function LoginContent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const API_URL = "https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com";
   useEffect(() => {
     const token = searchParams.get("token");
     const name = searchParams.get("name");
@@ -46,16 +46,13 @@ function LoginContent() {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/auth/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, password }),
+      const res = await fetch(`${API_URL}/api/auth/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({ email, password }),
+      });
 
       const data = await res.json();
 
@@ -79,8 +76,7 @@ function LoginContent() {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href =
-      " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/auth/google";
+    window.location.href = `${API_URL}/api/auth/google`;
   };
 
   return (
