@@ -18,7 +18,7 @@ export default function SignupPage() {
 
     try {
       const res = await fetch(
-        " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/auth/register",
+        " https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/auth/register",
         {
           method: "POST",
           headers: {

@@ -18,7 +18,7 @@ export default function MarketPricesPage() {
     const fetchMarketPrices = async () => {
       try {
         const res = await fetch(
-          " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/market",
+          " https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/market",
         );
 
         if (!res.ok) {

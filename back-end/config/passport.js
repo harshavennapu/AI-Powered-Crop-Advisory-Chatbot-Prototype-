@@ -9,7 +9,7 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL:
   process.env.NODE_ENV === "production"
-    ? " =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/auth/google/callback"
+    ? " https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/auth/google/callback"
     : "http://localhost:5000/api/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
