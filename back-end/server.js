@@ -28,7 +28,7 @@ connectDB();
 // ======================
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://ai-powered-crop-advisory-chatbot-prototype-apbe-i06g5a01u.vercel.app",
+  "https://ai-powered-crop-advisory-chatbot-pr-mu.vercel.app",
 ];
 
 app.use(
