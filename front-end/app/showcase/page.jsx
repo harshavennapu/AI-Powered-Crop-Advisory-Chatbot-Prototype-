@@ -56,7 +56,7 @@ export default function ShowcasePage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white">
       <Navbar />
 
       <main className="mx-auto flex-1 w-full max-w-6xl px-6 py-10">
@@ -64,7 +64,7 @@ export default function ShowcasePage() {
           UI Components Showcase
         </h1>
 
-        <div className="rounded-3xl border border-green-300/30 bg-white/10 p-8 shadow-2xl backdrop-blur-xl space-y-6">
+        <div className="space-y-6 rounded-3xl border border-green-300/30 bg-white p-8 shadow-2xl dark:bg-gray-800">
           <Button onClick={() => setOpen(true)}>Open Modal</Button>
 
           <Input
@@ -74,12 +74,13 @@ export default function ShowcasePage() {
           />
           <Button onClick={handleSearch}>Search Crop</Button>
           {searchResult && (
-            <div className="rounded-xl border border-green-400/30 bg-green-900/20 p-5">
+            <div className="rounded-xl border border-green-300 bg-green-50 p-5 dark:border-green-400/30 dark:bg-green-900/20">
               <h3 className="mb-2 text-lg font-bold text-yellow-300">
                 Search Result
               </h3>
-
-              <p className="text-green-100 leading-7">{searchResult}</p>
+              <p className="leading-7 text-gray-700 dark:text-green-100">
+                {searchResult}
+              </p>
             </div>
           )}
 

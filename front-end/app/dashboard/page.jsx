@@ -132,28 +132,30 @@ export default function DashboardPage() {
 
         {/* Dashboard Stats */}
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl bg-white/10 p-6 text-center backdrop-blur-md shadow-lg">
+          <div className="rounded-2xl bg-white p-6 text-center shadow-lg dark:bg-gray-800">
             <h2 className="text-4xl font-bold text-yellow-300">
               {stats.users}
             </h2>
 
-            <p className="mt-2 text-white">Registered Users</p>
+            <p className="mt-2 text-gray-700 dark:text-gray-200">
+              Registered Users
+            </p>
           </div>
 
-          <div className="rounded-2xl bg-white/10 p-6 text-center backdrop-blur-md shadow-lg">
+          <div className="rounded-2xl bg-white p-6 text-center shadow-lg dark:bg-gray-800">
             <h2 className="text-4xl font-bold text-yellow-300">
               {stats.crops}
             </h2>
 
-            <p className="mt-2 text-white">Total Crops</p>
+            <p className="mt-2 text-gray-700 dark:text-gray-200">Total Crops</p>
           </div>
 
-          <div className="rounded-2xl bg-white/10 p-6 text-center backdrop-blur-md shadow-lg">
+          <div className="rounded-2xl bg-white p-6 text-center shadow-lg dark:bg-gray-800">
             <h2 className="text-4xl font-bold text-yellow-300">
               {stats.aiFeatures}
             </h2>
 
-            <p className="mt-2 text-white">AI Features</p>
+            <p className="mt-2 text-gray-700 dark:text-gray-200">AI Features</p>
           </div>
         </div>
 

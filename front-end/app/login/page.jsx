@@ -1,5 +1,5 @@
 "use client";
-
+import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,6 +16,7 @@ function LoginContent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const API_URL = "https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com";
   useEffect(() => {
     const token = searchParams.get("token");
@@ -76,7 +77,8 @@ function LoginContent() {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = `${API_URL}/api/auth/google`;
+    window.location.href =
+      "https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com/api/auth/google";
   };
 
   return (
@@ -103,34 +105,104 @@ function LoginContent() {
             Login to continue to AgroAI
           </p>
 
-          <div className="mb-5">
-            <label className="mb-2 block font-medium text-gray-700">
+          <div className="mb-4">
+            <label className="mb-2 block font-medium text-gray-700 dark:text-gray-300">
               Email
             </label>
 
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-xl border border-gray-300 p-3 outline-none focus:border-green-600"
-            />
+            <div className="relative">
+              <Mail
+                size={20}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400"
+              />
+
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="
+        w-full
+        rounded-xl
+        border
+        border-gray-300
+        dark:border-gray-600
+        bg-white
+        dark:bg-gray-800
+        text-gray-900
+        dark:text-white
+        placeholder:text-gray-500
+        dark:placeholder:text-gray-400
+        caret-green-600
+        p-3
+        pl-12
+        outline-none
+        focus:border-green-600
+        focus:ring-2
+        focus:ring-green-500
+      "
+              />
+            </div>
           </div>
 
           <div className="mb-6">
-            <label className="mb-2 block font-medium text-gray-700">
+            <label className="mb-2 block font-medium text-gray-700 dark:text-gray-300">
               Password
             </label>
 
-            <input
-              type="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-xl border border-gray-300 p-3 outline-none focus:border-green-600"
-            />
-          </div>
+            <div className="relative">
+              <Lock
+                size={20}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400"
+              />
 
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="
+        w-full
+        rounded-xl
+        border
+        border-gray-300
+        dark:border-gray-600
+        bg-white
+        dark:bg-gray-800
+        text-gray-900
+        dark:text-white
+        placeholder:text-gray-500
+        dark:placeholder:text-gray-400
+        caret-green-600
+        p-3
+        pl-12
+        pr-12
+        outline-none
+        focus:border-green-600
+        focus:ring-2
+        focus:ring-green-500
+      "
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="
+        absolute
+        right-4
+        top-1/2
+        -translate-y-1/2
+        text-gray-500
+        hover:text-green-600
+        dark:text-gray-400
+        dark:hover:text-green-400
+        transition-colors
+      "
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
+          </div>
           <button
             onClick={handleLogin}
             disabled={loading}

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User, ChevronDown, LogOut } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
@@ -14,12 +14,19 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const [profileOpen, setProfileOpen] = useState(false);
   useEffect(() => {
     const token = localStorage.getItem("token");
+    const storedUser = localStorage.getItem("user");
+
     setIsLoggedIn(!!token);
+
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
   }, []);
 
   const handleLogout = () => {
@@ -74,13 +81,49 @@ export default function Navbar() {
               </Link>
             </li>
           ) : (
-            <li>
+            <li className="relative">
               <button
-                onClick={handleLogout}
-                className="rounded-full bg-red-600 px-6 py-2 font-semibold text-white transition hover:bg-red-700"
+                onClick={() => setProfileOpen(!profileOpen)}
+                className="flex items-center justify-center h-10 w-10 rounded-full bg-green-600 text-white font-bold transition hover:bg-green-700"
               >
-                Logout
+                {user?.name?.charAt(0)?.toUpperCase() || "U"}
               </button>
+
+              {profileOpen && (
+                <div className="absolute right-0 mt-3 w-64 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl dark:border-gray-700 dark:bg-gray-800">
+                  <div className="flex items-center gap-3 border-b border-gray-200 p-4 dark:border-gray-700">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-lg font-bold text-white">
+                      {user?.name?.charAt(0)?.toUpperCase() || "U"}
+                    </div>
+
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-gray-900 dark:text-white">
+                        {user?.name || "User"}
+                      </h3>
+
+                      <p className="max-w-48 truncate text-sm text-gray-500 dark:text-gray-400">
+                        {user?.email}
+                      </p>
+                    </div>
+                  </div>
+
+                  <Link
+                    href="/profile"
+                    className="flex items-center gap-3 px-4 py-3 text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                  >
+                    <User size={18} />
+                    My Profile
+                  </Link>
+
+                  <button
+                    onClick={handleLogout}
+                    className="flex w-full items-center gap-3 px-4 py-3 text-left text-red-600 hover:bg-red-50 dark:hover:bg-gray-700"
+                  >
+                    <LogOut size={18} />
+                    Logout
+                  </button>
+                </div>
+              )}
             </li>
           )}
         </ul>
