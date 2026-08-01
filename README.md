@@ -1,27 +1,47 @@
 # 🌱 Agro AI – AI-Powered Crop Advisory Platform
 
-## Overview
+A full-stack AI-powered agricultural advisory platform that helps farmers make informed decisions using Artificial Intelligence, secure authentication, and real-time crop management.
 
-Agro AI is a full-stack AI-powered Crop Advisory Platform developed as part of the **TBI-GEU Summer Internship Program 2026**. The platform helps farmers make informed agricultural decisions through Artificial Intelligence, secure authentication, crop management, and modern web technologies.
+Developed as part of the **TBI-GEU Summer Internship Program 2026**.
 
-The application consists of a **Next.js frontend**, **Node.js/Express backend**, **MongoDB Atlas** database, **JWT Authentication**, **Google OAuth Login**, and **Google Gemini AI** integration.
+---
 
-Users can securely register, log in, manage crop information, access protected pages, and receive AI-powered farming recommendations in real time.
+# 📖 Overview
 
-### Key Highlights
+Agro AI is an intelligent web application designed to assist farmers by providing AI-generated crop recommendations, crop management, market price information, pest detection, and secure user authentication.
+
+The platform combines modern web technologies with Google's Gemini AI to deliver personalized agricultural guidance. Users can register, log in securely, manage crop records, monitor farming information, and receive AI-powered recommendations through an intuitive and responsive interface.
+
+---
+
+# ✨ Key Highlights
 
 - 🌱 AI Crop Advisory using Google Gemini AI
-- 🌾 Crop Information Management (CRUD)
-- 📊 Dashboard with Real-time Statistics
-- 🔐 JWT Authentication & Google OAuth
+- 🌾 Complete Crop Management (CRUD)
+- 📊 Interactive Dashboard with Live Statistics
+- 🔐 JWT Authentication
+- 🔑 Google OAuth Login
 - 🐛 Pest Detection Module
 - 💹 Market Price Module
-- 📱 Fully Responsive User Interface
+- 👤 User Profile Management
+- 📱 Responsive User Interface
 - 🌙 Dark Mode Support
 
 ---
 
-# Project Links
+# 🚀 Live Deployment
+
+## Frontend (Vercel)
+
+https://ai-powered-crop-advisory-chatbot-pr-mu.vercel.app
+
+## Backend (Render)
+
+https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com
+
+---
+
+# 📂 Project Links
 
 ## GitHub Repository
 
@@ -33,101 +53,99 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes
 
 ---
 
-# Documentation
+# 📄 Documentation
+
+This repository includes:
 
 - README.md
 - PROMPTS.md (Prompt Engineering Log)
 - Postman Collection
 - Database Schema
-- Weekly Deliverables
+- Weekly Internship Deliverables
 - Frontend Completion Report
+- Deployment Documentation
 
 ---
 
-# Features
+# 🌟 Features
 
 ## 🤖 AI Features
 
-- AI-powered Crop Advisory using Google Gemini AI
+- AI Crop Advisory using Google Gemini AI
 - Intelligent Farming Recommendations
 - Smart Prompt Processing
 - Real-time AI Response Generation
-- Loading State while generating responses
+- Loading Indicator
 - User-friendly Error Handling
 - Agriculture-focused AI Assistance
 
 ---
 
-## 🌾 Crop Management Features
+## 🌾 Crop Management
 
 - Add Crop
 - View Crop Details
 - Update Crop Information
 - Delete Crop
-- Crop Details Modal
+- Crop Detail View
 - Real-time CRUD Operations
 - Form Validation
 - Success & Error Notifications
-- Crop Database Management
 
 ---
 
-## 📊 Dashboard Features
+## 📊 Dashboard
 
-- Dashboard Statistics
-- Total Users Counter
-- Total Crops Counter
+- Total Users
+- Total Crops
+- AI Feature Count
 - Protected Dashboard
 - Real-time API Integration
 
 ---
 
-## 👤 Authentication Features
+## 🔐 Authentication
 
 - User Registration
 - User Login
 - Google OAuth Login
 - JWT Authentication
 - Protected Routes
-- Logout Functionality
-- Secure Password Hashing (bcrypt)
+- Secure Password Hashing
+- Logout
 - Request Validation
-- API Rate Limiting
+- Rate Limiting
 
 ---
 
-## 🌿 Agricultural Features
+## 🌿 Agriculture Modules
 
 - AI Crop Advisory
 - Crop Information Management
 - Pest Detection
 - Market Prices
-- Smart Farming Dashboard
-- Agriculture Recommendations
+- Dashboard Analytics
 
 ---
 
 ## 💻 Frontend Features
 
 - Responsive Design
-- Dashboard
-- Crop CRUD Interface
-- Modern UI
-- Mobile Friendly
-- Dark Mode Support
+- Mobile Friendly Layout
+- Dark Mode
 - Component-based Architecture
+- Dashboard Interface
 - AI Prompt Input
 - AI Response Display
-- Loading Spinner
-- Error Messages
-- Responsive Navigation
+- Loading States
+- Error Handling
 - Reusable Components
-- Empty State UI
 - Form Validation
+- Empty State UI
 
 ---
 
-# Tech Stack
+# 🛠 Tech Stack
 
 ## Frontend
 
@@ -135,6 +153,7 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes
 - React.js
 - Tailwind CSS
 - JavaScript (ES6+)
+- Vercel (Deployment)
 
 ---
 
@@ -142,8 +161,9 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes
 
 - Node.js
 - Express.js
-- REST API
+- REST APIs
 - Google Gemini AI API
+- Render (Deployment)
 
 ---
 
@@ -156,7 +176,7 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes
 
 ## Authentication
 
-- JWT
+- JWT Authentication
 - Google OAuth 2.0
 - Passport.js
 - bcryptjs
@@ -165,8 +185,8 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes
 
 ## Validation & Security
 
-- express-validator
-- express-rate-limit
+- Express Validator
+- Express Rate Limit
 - CORS
 - Environment Variables
 - Protected Routes
@@ -186,91 +206,65 @@ https://www.figma.com/design/WqO78g3MdiHz4XJCQVjYgy/Week-3-Wireframes
 
 ---
 
-# Project Structure
+# 📁 Project Structure
 
 ```text
 AI-Powered-Crop-Advisory-Chatbot-Prototype-
 
 │
 ├── front-end/
-│
 │   ├── app/
 │   │   ├── about/
 │   │   ├── ai_features/
 │   │   ├── dashboard/
 │   │   ├── detail_listview/
 │   │   ├── login/
+│   │   ├── signup/
+│   │   ├── profile/
 │   │   ├── market_prices/
 │   │   ├── pest_detection/
-│   │   ├── profile/
-│   │   ├── showcase/
-│   │   └── signup/
+│   │   └── showcase/
 │   │
 │   ├── components/
-│   │   ├── ui/
-│   │   ├── Hero.jsx
-│   │   ├── Navbar.jsx
-│   │   └── Footer.jsx
-│   │
 │   ├── public/
 │   ├── package.json
 │   └── ...
 │
 ├── back-end/
-│
 │   ├── config/
 │   ├── controllers/
-│   │   ├── aiController.js
-│   │   ├── cropController.js
-│   │   ├── dashboardController.js
-│   │   ├── marketController.js
-│   │   └── userController.js
-│   │
 │   ├── middleware/
 │   ├── models/
-│   │   ├── Crop.js
-│   │   └── User.js
-│   │
 │   ├── routes/
-│   │   ├── aiRoutes.js
-│   │   ├── cropRoutes.js
-│   │   ├── dashboardRoutes.js
-│   │   ├── marketRoutes.js
-│   │   ├── pestRoutes.js
-│   │   └── userRoutes.js
-│   │
 │   ├── server.js
 │   ├── package.json
 │   └── .env
 │
 ├── Docs/
-│
 ├── postman/
-│
 ├── PROMPTS.md
-│
 └── README.md
 ```
-
 ---
 
-# Database
+# 🗄 Database
 
-This project uses **MongoDB Atlas** with **Mongoose ODM** for secure and scalable data storage.
+The application uses **MongoDB Atlas** with **Mongoose ODM** to securely store user information, crop records, and dashboard statistics.
 
----
+## Collections
 
-## User Model
+### 👤 Users
 
 - Name
 - Email
 - Password (Encrypted)
-- CreatedAt
-- UpdatedAt
+- Google ID (OAuth Users)
+- Created At
+- Updated At
 
 ---
 
-## Crop Model
+### 🌾 Crops
 
 - Crop Name
 - Season
@@ -278,416 +272,303 @@ This project uses **MongoDB Atlas** with **Mongoose ODM** for secure and scalabl
 - Fertilizer
 - Water Requirement
 - Expected Yield
-- CreatedAt
-- UpdatedAt
+- Created At
+- Updated At
 
 ---
 
-## Database Schema
+### 📊 Dashboard
+
+Dashboard statistics are generated dynamically from the database, including:
+
+- Total Users
+- Total Crops
+- AI Feature Count
+
+---
+
+# 🗂 Database Schema
 
 ![Database Schema](Docs/W5_SchemaDiagram_TBI-26100998.png)
 
 ---
 
-# Frontend Routes
+# 🌐 Frontend Routes
 
-| Route            | Description                 |
-| ---------------- | --------------------------- |
-| /                | Home Page                   |
-| /about           | About Page                  |
-| /login           | User Login                  |
-| /signup          | User Registration           |
-| /dashboard       | Protected Dashboard         |
-| /ai_features     | AI Crop Advisory            |
-| /detail_listview | Crop Information Management |
-| /market_prices   | Market Price Information    |
-| /pest_detection  | Pest Detection              |
-| /profile         | User Profile                |
-| /showcase        | UI Components Showcase      |
-
----
-
-# Backend REST APIs
-
-## Authentication APIs
-
-| Method | Endpoint                  | Description           |
-| ------ | ------------------------- | --------------------- |
-| POST   | /api/auth/register        | Register User         |
-| POST   | /api/auth/login           | Login User            |
-| GET    | /api/auth/google          | Google OAuth Login    |
-| GET    | /api/auth/google/callback | Google OAuth Callback |
+| Route | Description |
+|--------|-------------|
+| `/` | Home Page |
+| `/about` | About Project |
+| `/login` | User Login |
+| `/signup` | User Registration |
+| `/dashboard` | Protected Dashboard |
+| `/detail_listview` | Crop Management (CRUD) |
+| `/ai_features` | AI Crop Advisory |
+| `/market_prices` | Market Price Dashboard |
+| `/pest_detection` | Pest Detection |
+| `/profile` | User Profile |
+| `/showcase` | UI Component Showcase |
 
 ---
 
-## User APIs
+# 🔗 Backend REST APIs
 
-| Method | Endpoint          | Description    |
-| ------ | ----------------- | -------------- |
-| GET    | /api/users        | Get All Users  |
-| GET    | /api/users/:id    | Get User By ID |
-| PUT    | /api/users/:id    | Update User    |
-| DELETE | /api/users/:id    | Delete User    |
-| GET    | /api/users/search | Search Users   |
+## 🔐 Authentication APIs
 
----
-
-## Crop APIs
-
-| Method | Endpoint       | Description   |
-| ------ | -------------- | ------------- |
-| GET    | /api/crops     | Get All Crops |
-| POST   | /api/crops     | Create Crop   |
-| PUT    | /api/crops/:id | Update Crop   |
-| DELETE | /api/crops/:id | Delete Crop   |
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/register` | Register User |
+| POST | `/api/auth/login` | Login User |
+| GET | `/api/auth/google` | Google OAuth Login |
+| GET | `/api/auth/google/callback` | Google OAuth Callback |
 
 ---
 
-## Dashboard APIs
+## 👤 User APIs
 
-| Method | Endpoint       | Description          |
-| ------ | -------------- | -------------------- |
-| GET    | /api/dashboard | Dashboard Statistics |
-
----
-
-## AI APIs
-
-| Method | Endpoint         | Description               |
-| ------ | ---------------- | ------------------------- |
-| POST   | /api/ai/generate | Generate AI Crop Advisory |
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/users` | Get All Users |
+| GET | `/api/users/profile` | Get Logged-in User |
+| PUT | `/api/users/profile` | Update Logged-in User |
+| GET | `/api/users/search` | Search Users |
+| GET | `/api/users/:id` | Get User by ID |
+| PUT | `/api/users/:id` | Update User |
+| DELETE | `/api/users/:id` | Delete User |
 
 ---
 
-## Market APIs
+## 🌾 Crop APIs
 
-| Method | Endpoint    | Description       |
-| ------ | ----------- | ----------------- |
-| GET    | /api/market | Get Market Prices |
-
----
-
-## Pest Detection APIs
-
-| Method | Endpoint  | Description                |
-| ------ | --------- | -------------------------- |
-| GET    | /api/pest | Pest Detection Information |
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/crops` | Get All Crops |
+| POST | `/api/crops` | Add Crop |
+| PUT | `/api/crops/:id` | Update Crop |
+| DELETE | `/api/crops/:id` | Delete Crop |
 
 ---
 
-# Authentication Flow
+## 📊 Dashboard APIs
 
-1. User registers using Email and Password.
-2. Password is securely hashed using **bcrypt** before storing in MongoDB.
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/dashboard/stats` | Dashboard Statistics |
+
+---
+
+## 🤖 AI APIs
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/ai/generate` | Generate AI Crop Advisory |
+
+---
+
+## 💹 Market APIs
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/market` | Get Market Prices |
+
+---
+
+## 🐛 Pest Detection APIs
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/pests` | Pest Detection Information |
+
+---
+
+# 🔐 Authentication Workflow
+
+1. User registers using Name, Email, and Password.
+2. Password is encrypted using **bcryptjs**.
 3. User logs in using valid credentials.
-4. The server verifies the credentials.
+4. The backend verifies the credentials.
 5. A **JWT Token** is generated.
 6. The token is stored in Local Storage.
-7. Protected routes verify the token before allowing access.
-8. Users can also authenticate using **Google OAuth**.
+7. Protected routes verify the token before granting access.
+8. Users can also authenticate using **Google OAuth 2.0**.
 9. Logout removes the stored token and redirects the user to the Login page.
 
 ---
 
-# Dashboard Workflow
+# 📊 Dashboard Workflow
 
-1. User logs in successfully.
-2. Frontend requests dashboard statistics.
-3. Backend fetches data from MongoDB.
-4. Dashboard displays:
-
-- Total Users
-- Total Crops
-- Dashboard Cards
-
-5. Statistics update automatically whenever data changes.
-
----
-
-# AI Feature Workflow
-
-1. User opens the **AI Features** page.
-2. User enters an agriculture-related question.
-3. Frontend sends a **POST** request to:
-
-```text
-/api/ai/generate
+```
+User Login
+      │
+      ▼
+JWT Token Generated
+      │
+      ▼
+Protected Dashboard
+      │
+      ▼
+Dashboard API
+      │
+      ▼
+MongoDB
+      │
+      ▼
+Dashboard Statistics
 ```
 
-4. Backend validates the request.
-5. The backend securely communicates with **Google Gemini AI**.
-6. Gemini generates an intelligent farming recommendation.
-7. Backend sends the AI response.
-8. Frontend displays:
+The dashboard displays:
 
-- Loading State
-- AI Recommendation
-- Error Messages (if any)
+- Registered Users
+- Total Crops
+- AI Features
+- Personalized Welcome Message
 
 ---
 
-# Crop CRUD Workflow
+# 🤖 AI Crop Advisory Workflow
 
-## Create Crop
+```
+User Input
+      │
+      ▼
+Frontend
+      │
+POST /api/ai/generate
+      │
+      ▼
+Backend Validation
+      │
+      ▼
+Google Gemini AI
+      │
+      ▼
+AI Response
+      │
+      ▼
+Frontend Display
+```
 
-User fills the crop form
+Features include:
 
-↓
-
-POST `/api/crops`
-
-↓
-
-Crop stored in MongoDB
-
-↓
-
-Crop cards refresh automatically
-
----
-
-## Read Crops
-
-GET `/api/crops`
-
-↓
-
-Retrieve all crop records
-
-↓
-
-Display crop cards
+- Loading Indicator
+- AI-generated Farming Recommendations
+- Friendly Error Messages
+- Real-time Response Generation
 
 ---
 
-## Update Crop
+# 🌾 Crop Management Workflow
 
-Click **Edit**
+## ➕ Create Crop
 
-↓
-
-Modify crop details
-
-↓
-
-PUT `/api/crops/:id`
-
-↓
-
-Database updated
-
-↓
-
-UI refreshed automatically
+```
+User fills Crop Form
+        │
+        ▼
+POST /api/crops
+        │
+        ▼
+MongoDB
+        │
+        ▼
+Crop List Updated
+```
 
 ---
 
-## Delete Crop
+## 📖 Read Crops
 
-Click **Delete**
-
-↓
-
-Confirmation dialog
-
-↓
-
-DELETE `/api/crops/:id`
-
-↓
-
-Crop removed
-
-↓
-
-Cards refresh automatically
+```
+GET /api/crops
+        │
+        ▼
+Retrieve Crop Records
+        │
+        ▼
+Display Crop Cards
+```
 
 ---
 
-# Application Workflow
+## ✏️ Update Crop
 
+```
+Edit Crop
+      │
+      ▼
+PUT /api/crops/:id
+      │
+      ▼
+MongoDB Updated
+      │
+      ▼
+UI Refresh
+```
+
+---
+
+## ❌ Delete Crop
+
+```
+Delete Crop
+      │
+      ▼
+DELETE /api/crops/:id
+      │
+      ▼
+MongoDB Updated
+      │
+      ▼
+Crop Removed from UI
+```
+
+---
+
+# 🔄 Application Workflow
+
+```
 User Login
-
-↓
-
+      │
+      ▼
 Dashboard
-
-↓
-
-Select Feature
-
-↓
-
-AI Crop Advisory
-
-or
-
-Crop Management
-
-or
-
-Market Prices
-
-or
-
-Pest Detection
-
-↓
-
-Backend API
-
-↓
-
-MongoDB / Gemini AI
-
-↓
-
+      │
+      ▼
+Choose Feature
+      │
+      ├── AI Crop Advisory
+      ├── Crop Management
+      ├── Market Prices
+      ├── Pest Detection
+      └── User Profile
+            │
+            ▼
+Backend APIs
+            │
+            ▼
+MongoDB / Google Gemini AI
+            │
+            ▼
 Frontend Response
-
+```
 ---
 
-# Database
+# ⚙️ Installation Guide
 
-The application uses **MongoDB Atlas** with **Mongoose ODM** for storing user accounts, crop records, market prices, and dashboard data.
-
-## Collections
-
-### Users
-
-- Name
-- Email
-- Password (Encrypted)
-- Created At
-- Updated At
-
-### Crops
-
-- Crop Name
-- Season
-- Soil Type
-- Fertilizer
-- Water Requirement
-- Expected Yield
-
-### Dashboard
-
-- User Statistics
-- Crop Statistics
-- Activity Summary
-
-### Market Prices
-
-- Crop Name
-- Market
-- Price
-- Last Updated
-
----
-
-## Database Schema
-
-![Database Schema](Docs/W5_SchemaDiagram_TBI-26100998.png)
-
-# Frontend Routes
-
-| Route            | Description            |
-| ---------------- | ---------------------- |
-| /                | Home Page              |
-| /about           | About Project          |
-| /login           | User Login             |
-| /signup          | User Registration      |
-| /dashboard       | Protected Dashboard    |
-| /detail_listview | Crop Management (CRUD) |
-| /market_prices   | Market Price Dashboard |
-| /ai_features     | AI Crop Advisory       |
-| /pest_detection  | Pest Detection         |
-| /profile         | User Profile           |
-| /showcase        | UI Component Showcase  |
-
-# Backend REST APIs
-
-## Authentication
-
-| Method | Endpoint                  | Description           |
-| ------ | ------------------------- | --------------------- |
-| POST   | /api/auth/register        | Register User         |
-| POST   | /api/auth/login           | Login User            |
-| GET    | /api/auth/google          | Google OAuth Login    |
-| GET    | /api/auth/google/callback | Google OAuth Callback |
-
----
-
-## Dashboard APIs
-
-| Method | Endpoint             | Description          |
-| ------ | -------------------- | -------------------- |
-| GET    | /api/dashboard/stats | Dashboard Statistics |
-
----
-
-## Crop APIs
-
-| Method | Endpoint       | Description   |
-| ------ | -------------- | ------------- |
-| GET    | /api/crops     | Get All Crops |
-| POST   | /api/crops     | Add Crop      |
-| PUT    | /api/crops/:id | Update Crop   |
-| DELETE | /api/crops/:id | Delete Crop   |
-
----
-
-## Market APIs
-
-| Method | Endpoint    | Description       |
-| ------ | ----------- | ----------------- |
-| GET    | /api/market | Get Market Prices |
-
----
-
-## AI APIs
-
-| Method | Endpoint         | Description             |
-| ------ | ---------------- | ----------------------- |
-| POST   | /api/ai/generate | Generate AI Crop Advice |
-
----
-
-## User APIs
-
-| Method | Endpoint       | Description |
-| ------ | -------------- | ----------- |
-| GET    | /api/users     | Get Users   |
-| GET    | /api/users/:id | Get User    |
-| PUT    | /api/users/:id | Update User |
-| DELETE | /api/users/:id | Delete User |
-
-# Security Features
-
-- JWT Authentication
-- Google OAuth 2.0
-- Password Hashing using bcrypt
-- Protected Routes
-- Express Validator
-- Express Rate Limiting
-- CORS Protection
-- Environment Variables
-- Secure Gemini API Key Storage
-- Global Error Handling
-- Input Validation
-
----
-
-# Installation
-
-## Clone Repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/harshavennapu/AI-Powered-Crop-Advisory-Chatbot-Prototype-.git
 ```
 
+Move into the project directory:
+
+```bash
+cd AI-Powered-Crop-Advisory-Chatbot-Prototype-
+```
+
 ---
 
-## Frontend Setup
+# 💻 Frontend Setup
 
 ```bash
 cd front-end
@@ -695,7 +576,7 @@ npm install
 npm run dev
 ```
 
-Frontend runs on
+The frontend runs locally at:
 
 ```
 http://localhost:3000
@@ -703,7 +584,7 @@ http://localhost:3000
 
 ---
 
-## Backend Setup
+# 🖥 Backend Setup
 
 ```bash
 cd back-end
@@ -711,15 +592,17 @@ npm install
 npm run dev
 ```
 
-Backend runs on
+The backend runs locally at:
 
 ```
- =https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com
+http://localhost:5000
 ```
 
 ---
 
-# Environment Variables
+# 🌍 Environment Variables
+
+## Backend (.env)
 
 Create a `.env` file inside the **back-end** folder.
 
@@ -728,26 +611,92 @@ PORT=5000
 
 MONGODB_URI=your_mongodb_connection_string
 
-JWT_SECRET=your_secret_key
+JWT_SECRET=your_jwt_secret
 
 GOOGLE_CLIENT_ID=your_google_client_id
 
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 
+GOOGLE_CALLBACK_URL=http://localhost:5000/api/auth/google/callback
+
+CLIENT_URL=http://localhost:3000
+
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
-> Never commit your `.env` file to GitHub.
+---
+
+## Frontend (.env.local)
+
+Create a `.env.local` file inside the **front-end** folder.
+
+```env
+NEXT_PUBLIC_API_URL=https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com
+```
+
+> Never commit `.env` or `.env.local` files to GitHub.
 
 ---
 
-# API Testing
+# 🚀 Deployment Documentation (Week 9)
+
+## Live Frontend URL
+
+https://ai-powered-crop-advisory-chatbot-pr-mu.vercel.app
+
+---
+
+## Live Backend URL
+
+https://ai-powered-crop-advisory-chatbot-fa3i.onrender.com
+
+---
+
+## Deployment Platforms
+
+| Component | Platform |
+|-----------|----------|
+| Frontend | Vercel |
+| Backend | Render |
+| Database | MongoDB Atlas |
+
+---
+
+## Deployment Verification
+
+The deployed application supports the following features:
+
+- ✅ User Registration
+- ✅ User Login
+- ✅ Google OAuth Login
+- ✅ JWT Authentication
+- ✅ Protected Dashboard
+- ✅ Crop CRUD Operations
+- ✅ AI Crop Advisory
+- ✅ Profile Management
+- ✅ Market Prices
+- ✅ Pest Detection
+
+---
+
+## Known Limitations (Free Tier)
+
+- Render free services automatically spin down after periods of inactivity.
+- The first backend request after idle may take approximately **30–60 seconds**.
+- AI responses may take a few extra seconds depending on Google Gemini API response time.
+- Vercel Preview Deployment URLs change after each deployment. The Production URL should be used for sharing the application.
+
+---
+
+# 🧪 API Testing
 
 The backend APIs were tested using:
 
 - Postman
-- Browser Network Tab
 - Thunder Client
+- Browser Developer Tools (Network Tab)
+
+---
 
 ## Authentication
 
@@ -755,9 +704,13 @@ The backend APIs were tested using:
 - Login User
 - Google OAuth Login
 
+---
+
 ## Dashboard
 
 - Dashboard Statistics
+
+---
 
 ## Crop APIs
 
@@ -766,42 +719,51 @@ The backend APIs were tested using:
 - Update Crop
 - Delete Crop
 
+---
+
 ## AI APIs
 
-- Generate Crop Advisory
-
-## Verification
-
-- HTTP Status Codes
-- Protected Routes
-- JWT Authentication
-- Browser Network Requests (200 OK)
+- Generate AI Crop Advisory
 
 ---
 
-# Error Handling
+## Verification
 
-The application includes
+Verified API responses include:
 
-- Global Error Handler
+- HTTP 200 OK
+- JWT Authentication
+- Protected Routes
+- CRUD Operations
+- AI Response Generation
+
+---
+
+# ❌ Error Handling
+
+The application includes comprehensive error handling for:
+
+- Invalid Login Credentials
+- Unauthorized Access
+- Missing JWT Tokens
+- Invalid API Requests
+- Empty Form Validation
+- Server Errors
 - Loading States
-- Empty States
-- Validation Errors
-- API Error Responses
-- Invalid Route Handling
+- Empty State UI
 - Friendly Error Messages
 
 ---
 
-# Prompt Engineering
+# 🤖 Prompt Engineering
 
-The project contains a dedicated
+The project includes a dedicated prompt engineering log.
 
 ```
 PROMPTS.md
 ```
 
-which documents
+It contains:
 
 - Prompt Variations
 - Sample Inputs
@@ -811,18 +773,22 @@ which documents
 
 ---
 
-# Week 7 Deliverables ✅
+# 📚 Internship Deliverables
+
+## ✅ Week 7 Deliverables
 
 ### AI Feature Integration
 
+Completed
+
 - Google Gemini AI Integration
-- Prompt Input UI
+- AI Prompt Interface
 - AI Loading State
 - AI Response Display
 - Error Handling
 - Secure API Key Storage
 
-Documentation
+Documentation:
 
 ```
 Docs/W7_AIFeatureDemo_TBI-26100998.pdf
@@ -830,195 +796,198 @@ Docs/W7_AIFeatureDemo_TBI-26100998.pdf
 
 ---
 
-# Week 8 Deliverables ✅
+## ✅ Week 8 Deliverables
 
-## Deliverable 1 — Fully Connected Frontend
+### Fully Connected Frontend
 
 Completed
 
-- Connected Dashboard with Backend API
-- Protected Dashboard using JWT Authentication
-- Complete Crop CRUD Operations
-- AI Feature connected to Backend
-- Responsive UI (375px, 768px, 1440px)
+- Dashboard connected to Backend
+- JWT Authentication
+- Crop CRUD Operations
+- AI Feature Integration
+- Responsive UI
 - Loading States
-- Empty States
 - Error Handling
-- Zero Mock Data
 - Real API Integration
 
----
-
-## Deliverable 2 — Frontend Completion PDF
-
-Completed
-
-Documentation
+Documentation:
 
 ```
 Docs/W8_FrontendCompletion_TBI-26100998.pdf
 ```
 
-Includes
-
-- Authenticated Dashboard
-- Create Crop
-- Update Crop
-- Delete Crop
-- AI Feature
-- Responsive Views
-- Empty State
-- Network Verification
-
 ---
 
-## Deliverable 3 — Network Verification
+## ✅ Week 9 Deliverables
 
 Completed
 
-Verified successful API requests
-
-- Dashboard API
-- Crop API
-- AI API
-
-Status
-
-```
-200 OK
-```
+- Frontend Deployment on Vercel
+- Backend Deployment on Render
+- Live Public Application
+- Deployment Documentation
+- README Updated
+- Deployment Verification
+- Deployment Screenshots
+- Peer Testing Feedback
 
 ---
 
-# Current Status
+# 📊 Current Project Status
 
 ## Frontend
 
-- Responsive Home Page
-- Responsive Navigation
-- Dashboard
-- Authentication
-- Crop CRUD
-- AI Feature
-- Profile Page
-- Market Prices
-- Pest Detection
-- Component Showcase
-- Dark Mode
-- Empty States
-- Loading States
+- ✅ Responsive Home Page
+- ✅ User Authentication
+- ✅ Dashboard
+- ✅ Crop CRUD
+- ✅ AI Crop Advisory
+- ✅ Market Prices
+- ✅ Pest Detection
+- ✅ Profile Management
+- ✅ Responsive Navigation
+- ✅ Dark Mode
 
 ---
 
 ## Backend
 
-- REST APIs
-- JWT Authentication
-- Google OAuth
-- MongoDB Atlas
-- Crop CRUD APIs
-- Dashboard APIs
-- AI APIs
-- Validation
-- Error Handling
+- ✅ REST APIs
+- ✅ JWT Authentication
+- ✅ Google OAuth
+- ✅ MongoDB Atlas Integration
+- ✅ AI Integration
+- ✅ Validation
+- ✅ Global Error Handling
 
 ---
 
 ## Database
 
-- MongoDB Atlas
-- Mongoose ODM
-- Users Collection
-- Crops Collection
+- ✅ MongoDB Atlas
+- ✅ User Collection
+- ✅ Crop Collection
+- ✅ Dashboard Statistics
+
+---
+# 📸 Screenshots
+
+Project screenshots and reports are available in the **Docs** folder.
+
+## Development Screenshots
+
+- Week 2 Frontend Development
+- Week 3 Responsive UI
+- Week 4 Frontend & Backend Integration
+- Week 5 MongoDB CRUD Operations
+- Week 6 Authentication Flow
+- Week 7 AI Feature Integration
+- Week 8 Frontend Completion
 
 ---
 
-## Documentation
+## Week 9 Deployment Screenshots
 
-- README
-- PROMPTS
-- Postman Collection
-- Database Schema
-- Week 2 PDF
-- Week 3 PDF
-- Week 4 PDF
-- Week 5 PDF
-- Week 6 PDF
-- Week 7 PDF
-- Week 8 PDF
+The following deployment screenshots are included in the project documentation:
 
----
+- ✅ Vercel Dashboard showing successful frontend deployment
+- ✅ Render Dashboard showing successful backend deployment
+- ✅ Live Home Page with deployed URL visible
+- ✅ AI Crop Advisory feature working on the deployed application
 
-# Future Enhancements
+Deployment proof document:
 
-- Weather API Integration
-- Image-based Disease Detection
-- Voice-enabled AI Assistant
-- Farmer Profiles
-- Chat History
-- Email Verification
-- Forgot Password
-- Refresh Tokens
-- Role-Based Access Control
-- Multi-language Support
-- Mobile Application
+```
+Docs/W9_DeploymentProof_TBI-26100998.pdf
+```
 
 ---
 
-# Screenshots
+# 🚀 Future Enhancements
 
-Project documentation is available in the **Docs** folder.
+The following features are planned for future versions of Agro AI:
 
-- W2 Frontend Screenshots
-- W3 Responsive UI
-- W4 Frontend-Backend Connection
-- W5 CRUD Verification
-- W6 Authentication Flow
-- W7 AI Feature Demo
-- W8 Frontend Completion
+- 🌦 Weather API Integration
+- 🛰 Live Weather Forecast
+- 🐛 AI-based Image Disease Detection
+- 🎤 Voice-enabled AI Assistant
+- 📧 Email Verification
+- 🔑 Forgot Password & Password Reset
+- 🔄 Refresh Token Authentication
+- 👨‍🌾 Farmer Profile Dashboard
+- 📜 AI Chat History
+- 🌍 Multi-language Support
+- 📱 Android & iOS Mobile Application
+- 📍 GPS-based Crop Recommendations
+- 📈 Advanced Analytics Dashboard
+- 🔔 Push Notifications
 
 ---
 
-# Contributing
+# 🤝 Contributing
 
-Contributions are welcome.
+Contributions are welcome!
+
+To contribute:
 
 1. Fork the repository.
-2. Create a new branch.
+2. Create a new feature branch.
+
+```bash
+git checkout -b feature-name
+```
+
 3. Commit your changes.
+
+```bash
+git commit -m "Added new feature"
+```
+
 4. Push the branch.
+
+```bash
+git push origin feature-name
+```
+
 5. Open a Pull Request.
 
 ---
 
-# Author
+# 👨‍💻 Author
 
 ## Vennapu Sree Sai Chandra Harsha
 
-M.Tech – Artificial Intelligence & Machine Learning
+**M.Tech – Artificial Intelligence & Machine Learning**
 
-TBI-GEU Summer Internship Program 2026
+**TBI-GEU Summer Internship Program 2026**
 
-GitHub
+GitHub:
 
 https://github.com/harshavennapu
 
 ---
 
-# Acknowledgements
+# 🙏 Acknowledgements
+
+Special thanks to:
 
 - Technology Business Incubator (TBI-GEU)
+- Graphic Era (Deemed to be University)
 - Google Gemini AI
 - MongoDB Atlas
+- Google Cloud Console
 - Next.js
-- React
+- React.js
 - Express.js
 - Node.js
 - Tailwind CSS
+- Vercel
+- Render
 
 ---
 
-# License
+# 📄 License
 
 This project was developed as part of the **TBI-GEU Summer Internship Program 2026** for educational and learning purposes.
 
@@ -1026,22 +995,79 @@ This project was developed as part of the **TBI-GEU Summer Internship Program 20
 
 # ⭐ Project Status
 
-✅ Week 1 — Project Setup
+## Internship Progress
 
-✅ Week 2 — Frontend Development
-
-✅ Week 3 — Responsive UI
-
-✅ Week 4 — Frontend & Backend Integration
-
-✅ Week 5 — MongoDB CRUD Operations
-
-✅ Week 6 — JWT Authentication & Google OAuth
-
-✅ Week 7 — AI Crop Advisory using Google Gemini
-
-✅ Week 8 — Frontend Completion, Dashboard Integration & Responsive CRUD
+- ✅ Week 1 – Project Setup
+- ✅ Week 2 – Frontend Development
+- ✅ Week 3 – Responsive UI
+- ✅ Week 4 – Frontend & Backend Integration
+- ✅ Week 5 – MongoDB CRUD Operations
+- ✅ Week 6 – JWT Authentication & Google OAuth
+- ✅ Week 7 – AI Crop Advisory using Google Gemini
+- ✅ Week 8 – Frontend Completion & Dashboard Integration
+- ✅ Week 9 – Frontend & Backend Deployment
 
 ---
 
+## Current Features
+
+### Authentication
+
+- ✅ Register
+- ✅ Login
+- ✅ Google OAuth Login
+- ✅ JWT Authentication
+
+### Dashboard
+
+- ✅ Protected Dashboard
+- ✅ Live Statistics
+
+### Crop Management
+
+- ✅ Add Crop
+- ✅ View Crops
+- ✅ Update Crop
+- ✅ Delete Crop
+
+### AI Features
+
+- ✅ AI Crop Advisory
+- ✅ Google Gemini Integration
+
+### Other Modules
+
+- ✅ Market Prices
+- ✅ Pest Detection
+- ✅ User Profile
+- ✅ Responsive UI
+
+---
+
+# 📌 Week 9 Deployment Summary
+
+| Requirement | Status |
+|-------------|--------|
+| Live Frontend (Vercel) | ✅ Completed |
+| Live Backend (Render) | ✅ Completed |
+| Register/Login | ✅ Working |
+| Google OAuth | ✅ Working |
+| Dashboard | ✅ Working |
+| Crop CRUD | ✅ Working |
+| AI Crop Advisory | ✅ Working |
+| README Updated | ✅ Completed |
+| Deployment Documentation | ✅ Completed |
+| Deployment Screenshots | ✅ Completed |
+| Peer Testing | ✅ Completed |
+
+---
+
+# 🌟 Thank You
+
+Thank you for reviewing this project.
+
 If you found this project useful, consider giving it a ⭐ on GitHub.
+
+---
+
+**Made with ❤️ using Next.js, Express.js, MongoDB Atlas, Google Gemini AI, Render, and Vercel.**
