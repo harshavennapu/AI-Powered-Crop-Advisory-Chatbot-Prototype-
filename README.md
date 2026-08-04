@@ -305,13 +305,9 @@ AI-Powered-Crop-Advisory-Chatbot-Prototype
 
 # 📸 Project Screenshots
 
-> Replace these placeholders after saving your screenshots inside `Docs/images`.
+# 📸 Project Screenshots
 
 ## 🏠 Home Page
-
-```text
-Docs/images/home.png
-```
 
 ![Home Page](Docs/images/home.png)
 
@@ -319,19 +315,11 @@ Docs/images/home.png
 
 ## 📊 Dashboard
 
-```text
-Docs/images/dashboard.png
-```
-
 ![Dashboard](Docs/images/dashboard.png)
 
 ---
 
 ## 🤖 AI Crop Advisory
-
-```text
-Docs/images/ai-features.png
-```
 
 ![AI Crop Advisory](Docs/images/ai-features.png)
 
@@ -339,13 +327,10 @@ Docs/images/ai-features.png
 
 ## 🌾 Crop Management
 
-```text
-Docs/images/crop-management.png
-```
-
 ![Crop Management](Docs/images/crop-management.png)
 
 ---
+
 # ⚙ Installation Guide
 
 ## Prerequisites
