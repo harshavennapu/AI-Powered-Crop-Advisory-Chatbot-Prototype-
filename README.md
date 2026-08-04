@@ -333,7 +333,7 @@ Docs/images/dashboard.png
 Docs/images/ai-features.png
 ```
 
-![AI Crop Advisory](Docs/images/ai-feature.png)
+![AI Crop Advisory](Docs/images/ai-features.png)
 
 ---
 
