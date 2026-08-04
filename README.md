@@ -330,7 +330,7 @@ Docs/images/dashboard.png
 ## 🤖 AI Crop Advisory
 
 ```text
-Docs/images/ai-feature.png
+Docs/images/ai-features.png
 ```
 
 ![AI Crop Advisory](Docs/images/ai-feature.png)
