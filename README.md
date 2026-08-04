@@ -319,9 +319,9 @@ AI-Powered-Crop-Advisory-Chatbot-Prototype
 
 ---
 
-## 🤖 AI Crop Advisory
+## 💹 Market Prices
 
-![AI Crop Advisory](Docs/images/ai-features.png)
+![Market Prices](Docs/images/market_prices.png)
 
 ---
 
